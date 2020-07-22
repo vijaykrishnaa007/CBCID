@@ -9,11 +9,12 @@
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
-  <meta name="format-detection" content="telephone=no"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
   <link href="assets/img/cbcid/download__1_-removebg-preview.png" rel="icon">
- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
- <link rel='stylesheet' href='https://lucid-northcutt-877344.netlify.com/dist/splitting.css'>
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
@@ -24,168 +25,65 @@
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/slide.css" rel="stylesheet">
 
-<style>
-body {font-family: Arial;
-  background-image: url(assets/img/b93964eb59cdeee2c61cf9cebbd44832.jpg) ;
-}
+  <style>
+    body {
+      font-family: Arial;
+      background-image: url(assets/img/b93964eb59cdeee2c61cf9cebbd44832.jpg);
+    }
 
+    /* Style the tab */
+    .tab {
+      overflow: hidden;
+      border: 1px solid #ccc;
+      background-color: coral;
+      text-align: center;
+    }
 
-/* Style the tab */
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: coral;
-  text-align: center;
-}
+    /* Style the buttons inside the tab */
+    .tab button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+      font-size: 17px;
+    }
 
-/* Style the buttons inside the tab */
-.tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 17px;
-}
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+      background-color: #ddd;
+    }
 
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
-}
-.border{
-  border-radius: 10px;
-}
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ccc;
-}
-/*.tablinks{
+    .border {
+      border-radius: 10px;
+    }
+
+    /* Create an active/current tablink class */
+    .tab button.active {
+      background-color: #ccc;
+    }
+
+    /*.tablinks{
   margin-left:200px;
 }*/
 
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
-  text-align: center;
-}
-.clock {
-  --time-offset: 0;
-  width: 30%;
-  height: 30%;
-  margin-top: 20px;
-  background: rgb(180, 173, 173);
-  text-align: center;
-  display: -webkit-box;
-  display: inline-flex;
-  align-items: center;
-
-  font-family: monospace;
-  font-size: 5vmin;
-  font-family: 'Oswald', sans-serif;
-  letter-spacing: 0.1em;
-  -webkit-perspective: 500px;
-          perspective: 500px;
-  --h1: 1;
-  --h2: 2;
-  --m1: 3;
-  --m2: 4;
-  --s1: 5;
-  --s2: 6;
-}
-.clock, .clock:before,
-.clock * {
-  box-sizing: border-box;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-}
-.clock:before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-   -webkit-transform: translateZ(2.6em);
-          transform: translateZ(2.6em);
-} 
-
-.colon {
-  display: inline-block;
-  opacity: 0.8;
-  -webkit-transform: translateZ(2.5em);
-          transform: translateZ(2.5em);
-  width: 1ch;
-  margin: 0;
-  text-align: center;
-}
-
-.cog {
-  position: relative;
-  width: 1ch;
-  height: 1ch;
-  margin: -.25ch .1ch 0;
-  display: inline-block;
-  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.4, 0, 0.6, 1);
-  transition: -webkit-transform 0.3s cubic-bezier(0.4, 0, 0.6, 1);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.6, 1);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 0.3s cubic-bezier(0.4, 0, 0.6, 1);
-  -webkit-transform: rotateX(calc(  -1turn *  (var(--unit) / var(--char-total)) ));
-          transform: rotateX(calc(  -1turn *  (var(--unit) / var(--char-total)) ));
-}
-.cog .word,
-.cog .char {
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  font-weight:bolder;
-  width: 1ch;
-  height: 1ch;
-}
-.cog .char {
-  -webkit-transform: rotateX(calc( 4deg + (360deg * var(--char-percent) ))) translateZ(2.5em);
-          transform: rotateX(calc( 4deg + (360deg * var(--char-percent) ))) translateZ(2.5em);
-}
-
-.tens {
-  text-align: right;
-}
-
-.hours.tens {
-  --unit: var(--h1);
-}
-
-.hours {
-  --unit: var(--h2);
-}
-
-.minutes.tens {
-  --unit: var(--m1);
-}
-
-.minutes {
-  --unit: var(--m2);
-}
-
-.seconds.tens {
-  --unit: var(--s1);
-}
-
-.seconds {
-  --unit: var(--s2);
-}
-
-</style>
+    /* Style the tab content */
+    .tabcontent {
+      display: none;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      border-top: none;
+      text-align: center;
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="heading" style="text-align: center;">
-<!--<div class="row">
+  <div class="heading" style="text-align: center;">
+    <!--<div class="row">
 <div class="col-sm-5">
   <img src="assets/img/cbcid/download__1_-removebg-preview.png" width="300" height="300" class="img-fluid" alt="logo">
 </div>
@@ -195,33 +93,19 @@ body {font-family: Arial;
 </div>
 </div>
 </div>-->
-<div class="row" style="margin-left: 570px;">
-<img src="assets/img/cbcid/download__1_-removebg-preview.png" width="200" height="200" class="img-fluid" alt="logo">
-<div class="clock" style="margin-left: 200px;">
+    <img src="assets/img/cbcid/download__1_-removebg-preview.png" width="200" height="200" class="img-fluid" alt="logo">
+    <h1>SECURITY BRANCH</h1>
+    <h1>CID</h1>
+    <div class="container">
+      <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'home')">HOME</button>
+        <button class="tablinks" onclick="openCity(event, 'vip')">VIP SECURITY</button>
+        <button class="tablinks" onclick="openCity(event, 'noc')">NOC</button>
+        <button class="tablinks" onclick="openCity(event, 'queries')">QUERIES</button>
+        <a href="index.html"><button class="tablinks">LOGOUT</button></a>
 
-  <span class="cog hours tens" data-splitting style="color: darkblue;">0123456789</span>
-  <span class="cog hours" data-splitting style="color: darkblue;">0123456789</span>
-  <span class="colon">:</span>
-  <span class="cog minutes tens" data-splitting style="color: green;">0123456789</span>
-  <span class="cog minutes" data-splitting style="color: green;">0123456789</span>
-  <span class="colon">:</span>
-  <span class="cog seconds tens" data-splitting style="color: rgb(139, 0, 35);">0123456789</span>
-  <span class="cog seconds" data-splitting style="color: rgb(139, 0, 35);">0123456789</span>
-
-</div>
-</div>
-<h1>SECURITY BRANCH</h1>
-  <h1>CID</h1>
-<div class="container">
-<div class="tab" >
-  <button class="tablinks" onclick="openCity(event, 'home')">HOME</button>
-  <button class="tablinks" onclick="openCity(event, 'vip')">VIP SECURITY</button>
-  <button class="tablinks" onclick="openCity(event, 'noc')">NOC</button>
-  <button class="tablinks" onclick="openCity(event, 'queries')">QUERIES</button>
-  <a href="index.html"><button class="tablinks">LOGOUT</button></a>
-  
-</div>
-<!--<div class="homee" >
+      </div>
+      <!--<div class="homee" >
   <h2>Today's Updates</h2>
   <marquee width="100%" direction="up" height="70%" style="border:blue solid 3px;padding-top: 10px;text-align: center;margin-top: 40px;">
     This is sample scrolling text.</br>
@@ -233,396 +117,932 @@ body {font-family: Arial;
 
 </marquee>
 </div>-->
-<div id="home" class="tabcontent" style="display: block;">
-  <div class="border">
-  <h3>Security Branch </h3>
-  <p>CID</p>
-  <div class="row">
-    <div class="col-sm-6">
-    <img src="assets/img/cbcid/sureshkumar.jpg">
-    <h2>T.Suresh Kumar</h2>
-    <h3>SUPERINTENDENT OF POLICE</h3>
-    <h3>SECURITY BRANCH CID</h3>
-    </div>
-    <div class="col-sm-6">
-    <marquee width="70%" direction="up" height="40%" style="border:blue solid 3px;padding-top: 10px;text-align: center;">
-      This is sample scrolling text.</br>
-      This is sample scrolling text.</br>
-      This is sample scrolling text.</br>
-      This is sample scrolling text.</br>
-      This is sample scrolling text.</br>
-      This is sample scrolling text.</br>
-  
-  </marquee>
-<p>
-  ""DESCRIPTION""
-  </p>
-  </div>
-  </div>
-  </div>
-</div>
+      <div id="home" class="tabcontent" style="display: block;">
+        <div class="border">
+          <h3>Security Branch </h3>
+          <p>CID</p>
+          <div class="row">
+            <div class="col-sm-6">
+              <img src="assets/img/cbcid/sureshkumar.jpg">
+              <h2>T.Suresh Kumar</h2>
+              <h3>SUPERINTENDENT OF POLICE</h3>
+              <h3>SECURITY BRANCH CID</h3>
+            </div>
+            <div class="col-sm-6">
+              <marquee width="70%" direction="up" height="40%"
+                style="border:blue solid 3px;padding-top: 10px;text-align: center;">
+                This is sample scrolling text.</br>
+                This is sample scrolling text.</br>
+                This is sample scrolling text.</br>
+                This is sample scrolling text.</br>
+                This is sample scrolling text.</br>
+                This is sample scrolling text.</br>
 
-<div id="vip" class="tabcontent">
-  <!--<div class="tab" >-->
-    <div style="margin-top: 20px;align-items: start;">      
-    <button class="btn btn-secondary"  onclick="openCity(event, 'scale_data')">SECURITY DATA</button>
-    <button class="btn btn-primary"  onclick="openCity(event, 'scale')">SCALE OF SECURITY</button>
-    <button class="btn btn-success"  onclick="openCity(event, 'vip_m')">VIP MOVEMENT</button>
-    <button class="btn btn-danger"  onclick="openCity(event, 'cof')">CODE OF PROVISIONS</button>
+              </marquee>
+              <p>
+                ""DESCRIPTION""
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-  
-</div>  
-  <div id="scale_data" class="tabcontent">
-    <h3 style="padding-bottom: 30px;">OFFICER DETAILS</h3>
-    <form action="/action_page.php">
-     <div class="row" style="margin-left: 50px;">
-    <div class="col-sm-6" style="text-align: left;">
-      
-        <label for="name">Name of the Officer:</label><br>
-        <input type="text" id="s_name" name="fname" style="margin-left: 20px;"><br><br>
-        <label for="des">Designation:</label><br>
-        <input type="text" id="s_des" name="lname" style="margin-left: 20px;"><br><br>
-        
-        
-     </div> 
-     <div class="col-sm-6" style="text-align:left">
-     <label for="scale">Scale of Security:</label><br>
-        <input type="text" id="s_des" name="lname" style="margin-left: 20px;"><br><br>
-        <label for="date">Experience:</label><br>
-        <input type="text" id="s_exp" name="fname" style="margin-left: 20px;"><br><br>
+
+      <div id="vip" class="tabcontent">
+        <!--<div class="tab" >-->
+        <div style="margin-top: 20px;align-items: start;">
+          <button class="btn btn-secondary" onclick="openCity(event, 'scale_data')">SECURITY DATA</button>
+          <button class="btn btn-primary" onclick="openCity(event, 'scale')">SCALE OF SECURITY</button>
+          <button class="btn btn-success" onclick="openCity(event, 'vip_m')">VIP MOVEMENT</button>
+          <button class="btn btn-danger" onclick="openCity(event, 'cof')">CODE OF PROVISIONS</button>
+        </div>
+
       </div>
+      <div id="scale_data" class="tabcontent">
+        <h3 style="padding-bottom: 30px;">Scale of Security Add Entry</h3>
+        <form action="" method="POST" id="officerform">
+          <div class="row" style="margin-left: 50px;">
+            <div class="col-sm-6" style="text-align: left;">
+
+              <label for="name">Name of the Person:</label><br>
+              <input type="text" id="s_name" name="fname" style="margin-left: 20px;"><br><br>
+              <label for="des">Designation:</label><br>
+              <input type="text" id="s_des" name="lname" style="margin-left: 20px;"><br><br>
+
+
+            </div>
+            <div class="col-sm-6" style="text-align:left">
+              <label for="scale">Scale of Security:</label><br>
+              <div class="col-sm-4">
+                <label for="cars">SCALE:</label>
+                <select id="s_scale">
+                  <option value="Z+">Z+</option>
+                  <option value="Z">Z</option>
+                  <option value="Y">Y</option>
+                  <option value="X">X</option>
+                </select>
+                <br><br>
+              </div>
+            </div>
+          </div>
+          <input class="btn btn-success" type="submit" value="Submit">
+        </form>
+        <script>
+          document.getElementById('officerform').addEventListener('submit', formofficerSubmit);
+
+          function formofficerSubmit(e) {
+            e.preventDefault();
+            let name = document.querySelector('#s_name').value;
+            let des = document.querySelector('#s_des').value;
+            let scale = document.querySelector('#s_scale').value;
+            database.ref('scaleofsecurity').push({ name: name, des: des, scale: scale });
+            document.getElementById('officerform').reset();
+          }
+        </script>
       </div>
-     <input class="btn btn-success" type="submit" value="Submit">
-  </form>
-    </div>
-  <div id="scale" class="tabcontent">
-    <h3>Scale</h3>
-    <div class="row">
-    <div class="col-sm-4">
-      <label for="cars">LIST OF SPG PROTECTEE:</label>
-    <select name="cars" id="cars">
-      <option value="volvo">Sample 1</option>
-      <option value="saab">Sample 2</option>
-      <option value="opel">Sample 3</option>
-      <option value="audi">Sample 4</option>
-    </select>
-  
-    </div>
+      <div id="scale" class="tabcontent">
+        <h3>Scale</h3>
+        <div class="row">
 
-    <div class="col-sm-4">
-      <label for="cars">LIST OF NSG PROTECTEE:</label>
-    <select name="cars" id="cars">
-          <option value="volvo">Sample 1</option>
-          <option value="saab">Sample 2</option>
-          <option value="opel">Sample 3</option>
-          <option value="audi">Sample 4</option>
-    </select>
-  
-    </div>
 
-    <div class="col-sm-4">
-      <label for="cars">LIST OF CRPF PROTECTEE:</label>
-    <select name="cars" id="cars">
-      <option value="volvo">Sample 1</option>
-      <option value="saab">Sample 2</option>
-      <option value="opel">Sample 3</option>
-      <option value="audi">Sample 4</option>
-    </select><br><br><br>  
-    </div>
+          <div class="col-sm-4">
+            <label for="cars">SCALE:</label>
+            <select id="qs_scale">
+              <option value="Z+">Z+</option>
+              <option value="Z">Z</option>
+              <option value="Y">Y</option>
+              <option value="X">X</option>
+            </select>
+            <br><br>
+            <button id="protocteedata">Submit</button>
+            <button id="printproctocee">Print</button>
+          </div>
+          <script>
+            function printpData() {
+              var divToPrint = document.getElementById("scaleresult");
+              newWin = window.open("");
+              newWin.document.write(divToPrint.outerHTML);
+              newWin.print();
+              newWin.close();
+            }
+            document.getElementById('printproctocee').addEventListener('click', printpData);
+            document.getElementById("protocteedata").addEventListener('click', retrieve);
+            function retrieve() {
+              try {
+                var removeTab = document.getElementById('scaleresult');
+                var parentEl = removeTab.parentElement;
+                parentEl.removeChild(removeTab);
+              } catch (err) {
 
-    <div class="col-sm-2"></div>
-    <div class="col-sm-4">
-      <label for="cars">Z+ SCALE:</label>
-    <select name="cars" id="cars">
-      <option value="volvo">Sample 1</option>
-      <option value="saab">Sample 2</option>
-      <option value="opel">Sample 3</option>
-      <option value="audi">Sample 4</option>
-    </select>
-  
-    </div>
-    
-    <div class="col-sm-4">
-      <label for="cars">Z SCALE:</label>
-    <select name="cars" id="cars">
-      <option value="volvo">Sample 1</option>
-      <option value="saab">Sample 2</option>
-      <option value="opel">Sample 3</option>
-      <option value="audi">Sample 4</option>
-    </select>
-  <br><br>
-    </div>
-    
+              }
+              let value = document.getElementById("qs_scale").value;
+              //
+              var fragment = document.getElementById("scale");
+              var animalsArray = ["Name of Vip", "Designation", "Scale"];
+              var table = document.createElement("table");
+              table.id = "scaleresult";
+              var thead = document.createElement("thead");
+              var tr = document.createElement("tr");
+              for (var i = 0; i < animalsArray.length; i++) {
 
-  </div>
-  </div>
-  <div id="vip_m" class="tabcontent">
-    <h3 style="padding-bottom: 30px;">VIP MOVEMENT</h3>
-    <form action="/action_page.php">
-      <div class="row" style="margin-left: 60px;">
-    <div class="col-sm-6" style="text-align: left;">
-      
-        <label for="name">Name of the VIP :</label><br>
-        <input type="text" id="name" name="fname" style="margin-left: 20px;"><br><br>
-        <label for="des">Designation:</label><br>
-        <input type="text" id="des" name="lname" style="margin-left: 20px;"><br><br>
-        <label for="scale">Scale of Security:</label><br>
-        <input type="text" id="des" name="lname" style="margin-left: 20px;"><br><br><br><br>
-        <label for="date">Date of Visit:</label><br>
-        <input type="date" id="date" name="fname" style="margin-left: 20px;"><br><br>
-        <label for="purpose">Purpose of Visit:</label><br>
-        <input type="text" id="purpose" name="lname" style="margin-left: 20px;"><br><br>
-        <label for="stay">Place of Stay:</label><br>
-        <input type="text" id="stay" name="fname" style="margin-left: 20px;"><br><br><br><br>
-        <label for="place">Place of Visit:</label><br>
-        <input type="text" id="place" name="lname" style="margin-left: 20px;"><br><br>
-        <label for="function">Function Places:</label><br>
-        <input type="text" id="function" name="lname" style="margin-left: 20px;"><br><br>
-        <label for="type">Type of Function:</label><br>
-        <input type="text" id="type" name="lname" style="margin-left: 20px;"><br><br><br><br>
+                var td = document.createElement("th");
+                td.style.border = "1px solid black";
+                td.textContent = animalsArray[i];
 
-      
-     </div> 
-     <div class="col-sm-6" style="text-align: left;padding-left: 150px;">
-      
-        <label for="airport">Airport Details:</label><br>
-        <label for="a_from">From:</label><br>
-        <input type="text" id="a_from" name="fname" style="margin-left: 20px;"><br>
-        <label for="a_to" >To:</label><br>
-        <input type="text" id="a_to" name="fname" style="margin-left: 20px;"><br><br>
-        
-        <label for="helipad">Helipad Details:</label><br>
-        <label for="h_from">From:</label><br>
-        <input type="text" id="h_from" name="fname" style="margin-left: 20px;"><br>
-        <label for="h_to" >To:</label><br>
-        <input type="text" id="h_to" name="fname" style="margin-left: 20px;"><br><br>
-        
-        <label for="des">BR Car :</label><br>
-        <input type="text" id="br" name="lname" style="margin-left: 20px;"><br><br>
-        
-        <label for="des">If not Provided:</label><br>
-        <input type="text" id="br_pro" name="lname" style="margin-left: 20px;"><br><br>
-        <label for="des">Reason:</label><br>
-        <input type="text" id="br_reason" name="lname" style="margin-left: 25px;"><br><br>
-       
+                tr.appendChild(td);
 
-        <label for="des">PSO Car :</label><br>
-        <input type="text" id="pso" name="lname" style="margin-left: 20px;"><br><br>
-        
-        <label for="des">If not Provided:</label><br>
-        <input type="text" id="pso_pro" name="lname" style="margin-left: 20px;"><br><br>
-        <label for="des">Reason:</label><br>
-        <input type="text" id="pso_reason" name="lname" style="margin-left: 20px;"><br><br>
-        
+              }
+              thead.appendChild(tr);
+              table.appendChild(tr);
+              fragment.appendChild(table);
+              document.body.appendChild(fragment);
+              database.ref('scaleofsecurity').orderByChild('scale').equalTo(value).once('value')
+                .then(function (dataSnapshot) {
+                  var tbody = document.createElement("tbody");
+                  console.log("sguv");
+                  dataSnapshot.forEach(function (child) {
+                    tr = document.createElement("tr");
+                    var value = child.val();
+                    var td = document.createElement("td");
+                    td.textContent = value.name;
+                    td.style.border = "1px solid black";
+                    tr.append(td);
+                    td = document.createElement("td");
+                    td.style.border = "1px solid black";
+                    td.textContent = value.des;
+                    tr.append(td);
+                    td = document.createElement("td");
+                    td.style.border = "1px solid black";
+                    td.textContent = value.scale;
+                    tr.append(td);
+                    td = document.createElement("button");
+                    td.style.border = "1px solid black";
+                    td.textContent = "Delete";
+                    td.addEventListener("click", function () {
+                      database.ref('scaleofsecurity').child(child.key).remove();
+                      retrieve();
+                    });
+                    tr.append(td);
+                    tbody.appendChild(tr);
+                  });
+                  table.style.border = "1px solid black";
+                  table.appendChild(tbody);
 
-        <label for="scale">NSG/CRPF/CISF:</label><br>
-        <input type="text" id="des" name="lname" style="margin-left: 20px;"><br><br><br><br>
-        
-      
-     </div>    
-     </div>
-     <label for="remark">Remarks</label>
-        <textarea  name="message" rows="8" columns="10" style="margin-left: 10px;"></textarea><br><br><br><br>
 
-     <label for="scale">Attach DSR:</label>
-     <input type="text" id="des" name="lname"><br>
+                });
+              //
+            }
+          </script>
 
-     <input class="btn btn-success" type="submit" value="Submit">
-  </form>
-  </div>
+        </div>
+      </div>
+      <div id="vip_m" class="tabcontent">
+        <h3 style="padding-bottom: 30px;">VIP MOVEMENT</h3>
+        <form action="" method="POST" id="uploadform">
+          <div class="row" style="margin-left: 60px;">
+            <div class="col-sm-6" style="text-align: left;">
 
-  <div id="cof" class="tabcontent">
-    <h3>Code of Provisions</h3>
-    <p>See the list</p>
-  </div>
-    
-  <div id="noc" class="tabcontent">
-  
-    <button class="btn btn-primary" onclick="openCity(event, 'noc_1')">NOC</button>
-    <button class="btn btn-success" onclick="openCity(event, 'noc_q')">NOC QUERIES</button>
-  
-</div>
+              <label for="name">Name of the VIP :</label><br>
+              <input type="text" id="name" name="fname" style="margin-left: 20px;"><br><br>
+              <label for="des">Designation:</label><br>
+              <input type="text" id="des" name="lname" style="margin-left: 20px;"><br><br>
+              <label for="scale">Scale of Security:</label><br>
+              <input type="text" id="scale7" name="scale" style="margin-left: 20px;"><br><br><br><br>
+              <label for="date">Date of Visit:</label><br>
+              <input type="date" id="date" name="fname" style="margin-left: 20px;"><br><br>
+              <label for="purpose">Purpose of Visit:</label><br>
+              <input type="text" id="purpose" name="lname" style="margin-left: 20px;"><br><br>
+              <label for="stay">Place of Stay:</label><br>
+              <input type="text" id="stay" name="fname" style="margin-left: 20px;"><br><br><br><br>
+              <label for="place">Place of Visit:</label><br>
+              <input type="text" id="place" name="lname" style="margin-left: 20px;"><br><br>
+              <label for="function">Function Places:</label><br>
+              <input type="text" id="function" name="lname" style="margin-left: 20px;"><br><br>
+              <label for="type">Type of Function:</label><br>
+              <input type="text" id="type" name="lname" style="margin-left: 20px;"><br><br><br><br>
 
-<div id="noc_q" class="tabcontent">
-  <h3>NOC</h3>
-  <form action="/action_page.php">
-    <label for="scale"></label><br>
-    <input type="text" id="noc_search" name="lname" style="margin-left: 20px;"><br><br><br><br>
-    
-    <div class="row" style="margin-left: 40px;">
-  <div class="col-sm-6" style="text-align: left;">
-    <input type="checkbox" id="ref_no" name="vehicle1" >
-    <label for="ref_no">NOC REFERECE NO</label><br><br>
-    <input type="checkbox" id="origin" name="vehicle2" >
-    <label for="origin"> NOC ORIGIN DEPT</label><br><br>
-    <input type="checkbox" id="name" name="vehicle3" >
-    <label for="name">APPLICANT NAME</label><br><br>
-    <input type="checkbox" id="des" name="vehicle1" >
-    <label for="des">DESIGNATION</label><br><br>
-    <input type="checkbox" id="country" name="vehicle2" >
-    <label for="country">PROPOSED COUNTRY</label><br><br>
-    
-   
-  </div>
-  <div class="col-sm-6" style="text-align: left;padding-left: 160px;">
-    <input type="checkbox" id="purpose" name="vehicle3" >
-    <label for="purpose">PURPOSE</label><br><br>
-    <input type="checkbox" id="duration" name="vehicle3" >
-    <label for="duration">DURATION</label><br><br>    
-    <input type="checkbox" id="action" name="vehicle3" >
-    <label for="action">DEPT ACTION IF ANY</label><br><br>
-    <input type="checkbox" id="date" name="vehicle3" >
-    <label for="date">DATE OF NOC</label><br><br>    
-    <input type="checkbox" id="reason" name="vehicle3" >
-    <label for="reason">REASON</label><br><br>
-  </div>
-  
-  </div>
-  <input class="btn btn-success" type="submit" value="Submit">
-  </form> 
-</div>
 
-<div id="noc_1" class="tabcontent">
-  <!--<nav aria-label="breadcrumb" style="background-color:black">
+            </div>
+            <div class="col-sm-6" style="text-align: left;padding-left: 150px;">
+
+              <label for="airport">Airport Details:</label><br>
+              <label for="a_from">From:</label><br>
+              <input type="text" id="a_from" name="fname" style="margin-left: 20px;"><br>
+              <label for="a_to">To:</label><br>
+              <input type="text" id="a_to" name="fname" style="margin-left: 20px;"><br><br>
+
+              <label for="helipad">Helipad Details:</label><br>
+              <label for="h_from">From:</label><br>
+              <input type="text" id="h_from" name="fname" style="margin-left: 20px;"><br>
+              <label for="h_to">To:</label><br>
+              <input type="text" id="h_to" name="fname" style="margin-left: 20px;"><br><br>
+
+              <label for="des">BR Car :</label><br>
+              <input type="text" id="br" name="lname" style="margin-left: 20px;"><br><br>
+
+              <label for="des">If not Provided:</label><br>
+              <input type="text" id="br_pro" name="lname" style="margin-left: 20px;"><br><br>
+              <label for="des">Reason:</label><br>
+              <input type="text" id="br_reason" name="lname" style="margin-left: 25px;"><br><br>
+
+
+              <label for="des">PSO Car :</label><br>
+              <input type="text" id="pso" name="lname" style="margin-left: 20px;"><br><br>
+
+              <label for="des">If not Provided:</label><br>
+              <input type="text" id="pso_pro" name="lname" style="margin-left: 20px;"><br><br>
+              <label for="des">Reason:</label><br>
+              <input type="text" id="pso_reason" name="lname" style="margin-left: 20px;"><br><br>
+
+
+              <label for="scale">NSG/CRPF/CISF:</label><br>
+              <input type="text" id="typeofforce" name="lname" style="margin-left: 20px;"><br><br><br><br>
+
+
+            </div>
+          </div>
+          <label for="remark">Remarks</label>
+          <textarea name="message" id="remarks" rows="8" columns="10"
+            style="margin-left: 10px;"></textarea><br><br><br><br>
+
+          <label for="scale">Attach DSR:</label>
+          <input type="text" id="dsr" name="lname"><br>
+          <input type="file" id="fileToUpload">
+          <input class="btn btn-success" type="submit" value="Submit">
+        </form>
+      </div>
+
+      <div id="cof" class="tabcontent">
+        <h3>Code of Provisions</h3>
+        <p>See the list</p>
+      </div>
+
+      <div id="noc" class="tabcontent">
+
+        <button class="btn btn-primary" onclick="openCity(event, 'noc_1')">NOC</button>
+        <button class="btn btn-success" onclick="openCity(event, 'noc_q')">NOC QUERIES</button>
+
+      </div>
+      <script>
+        document.getElementById('uploadform').addEventListener('submit', formSubmit);
+
+        function formSubmit(e) {
+          e.preventDefault();
+          let name = document.querySelector('#name').value;
+          let des = document.querySelector('#des').value;
+          let scale = document.querySelector('#scale7').value;
+          let date = document.querySelector('#date').value;
+          let purpose = document.querySelector('#purpose').value;
+          let stay = document.querySelector('#stay').value;
+          let place = document.querySelector('#place').value;
+          let functio = document.querySelector('#function').value;
+          let type = document.querySelector('#type').value;
+          let a_from = document.querySelector('#a_from').value;
+          let a_to = document.querySelector('#a_to').value;
+          let h_from = document.querySelector('#h_from').value;
+          let h_to = document.querySelector('#h_to').value;
+          let br = document.querySelector('#br').value;
+          let br_pro = document.querySelector('#br_pro').value;
+          let br_reason = document.querySelector('#br_reason').value;
+          let pso = document.querySelector('#pso').value;
+          let pso_pro = document.querySelector('#pso_pro').value;
+          let pso_reason = document.querySelector('#pso_reason').value;
+          let typeofforce = document.querySelector('#typeofforce').value;
+          let remarks = document.querySelector('#remarks').value;
+          let dsr = document.querySelector('#dsr').value;
+          var file = document.querySelector("#fileToUpload").files[0];
+          const metadata = { contentType: file.type };
+          storage.ref().child('vipmovement/' + uuidv4()).put(file, metadata).then(function (snapshot) {
+            snapshot.ref.getDownloadURL().then(function (url) {
+              database.ref('vipmovement').push({
+                name: name, des: des, scale: scale, date: date, purpose: purpose, stay: stay, place: place, function: functio
+                , type: type, a_from: a_from, a_to: a_to, h_from: h_from, h_to: h_to, br: br, br_pro: br_pro, br_reason: br_reason, pso: pso, pso_pro: pso_pro, pso_reason: pso_reason
+                , typeofforce: typeofforce, remarks: remarks, dsr: dsr, link: url
+              });
+            });
+
+          });
+
+          console.log(name);
+          document.getElementById('uploadform').reset();
+        }
+        function uuidv4() {
+          return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+          });
+        }
+      </script>
+
+      <div id="noc_q" class="tabcontent">
+        <h3>NOC</h3>
+        <form action="" method="POST" id="nocqueryform">
+          <label for="scale"></label><br>
+          <input type="text" id="noc_search" name="lname" style="margin-left: 20px;"><br><br><br><br>
+
+          <div class="row" style="margin-left: 40px;">
+            <div class="col-sm-6" style="text-align: left;">
+              <input type="checkbox" id="noc_refno" name="vehicle1">
+              <label for="ref_no">NOC REFERECE NO</label><br><br>
+              <input type="checkbox" id="noc_origin" name="vehicle2">
+              <label for="origin"> NOC ORIGIN DEPT</label><br><br>
+              <input type="checkbox" id="noc_name" name="vehicle3">
+              <label for="name">APPLICANT NAME</label><br><br>
+              <input type="checkbox" id="noc_des" name="vehicle1">
+              <label for="des">DESIGNATION</label><br><br>
+              <input type="checkbox" id="noc_country" name="vehicle2">
+              <label for="country">PROPOSED COUNTRY</label><br><br>
+
+
+            </div>
+            <div class="col-sm-6" style="text-align: left;padding-left: 160px;">
+              <input type="checkbox" id="noc_purpose" name="vehicle3">
+              <label for="purpose">PURPOSE</label><br><br>
+              <input type="checkbox" id="noc_duration" name="vehicle3">
+              <label for="duration">DURATION</label><br><br>
+              <input type="checkbox" id="noc_action" name="vehicle3">
+              <label for="action">DEPT ACTION IF ANY</label><br><br>
+              <input type="checkbox" id="noc_date" name="vehicle3">
+              <label for="date">DATE OF NOC</label><br><br>
+              <input type="checkbox" id="noc_reason" name="vehicle3">
+              <label for="reason">REASON</label><br><br>
+            </div>
+
+          </div>
+          <input class="btn btn-success" type="submit" value="Submit">
+        </form>
+        <button id="printnoc">Print</button>
+      </div>
+      <script>
+        //
+        function printnocData() {
+          var divToPrint = document.getElementById("querynocresult");
+          newWin = window.open("");
+          newWin.document.write(divToPrint.outerHTML);
+          newWin.print();
+          newWin.close();
+        }
+        document.getElementById('printnoc').addEventListener('click', printnocData);
+        document.getElementById('nocqueryform').addEventListener('submit', formnocdata);
+
+        function formnocdata(e) {
+          try {
+            var removeTab = document.getElementById('querynocresult');
+            var parentEl = removeTab.parentElement;
+            parentEl.removeChild(removeTab);
+          } catch (err) {
+
+          }
+          e.preventDefault();
+          let name = document.querySelector('#noc_refno').checked;
+          let origin = document.querySelector('#noc_origin').checked;
+          let designation = document.querySelector('#noc_name').checked;
+          let scale = document.querySelector('#noc_des').checked;
+          let date = document.querySelector('#noc_country').checked;
+          let placeofstay = document.querySelector('#noc_purpose').checked;
+          let placeofvisit = document.querySelector('#noc_duration').checked;
+          let functio = document.querySelector('#noc_action').checked;
+          let purpose = document.querySelector('#noc_date').checked;
+          let airport = document.querySelector('#noc_reason').checked;
+          let value = document.querySelector('#noc_search').value;
+          let query;
+          if (name) {
+            query = database.ref('noc').orderByChild("refno").equalTo(value);
+          }
+          else if (designation) {
+            query = database.ref('noc').orderByChild("name").equalTo(value);
+          }
+          else if (scale) {
+            query = database.ref('noc').orderByChild("des").equalTo(value);
+          }
+          else if (date) {
+            query = database.ref('noc').orderByChild("country").equalTo(value);
+          }
+          else if (placeofstay) {
+            query = database.ref('noc').orderByChild("purpose").equalTo(value);
+          }
+          else if (placeofvisit) {
+            query = database.ref('noc').orderByChild("days").equalTo(value);
+          }
+          else if (functio) {
+            query = database.ref('noc').orderByChild("deptaction").equalTo(value);
+          }
+          else if (purpose) {
+            query = database.ref('noc').orderByChild("date").equalTo(value);
+          }
+          else if (airport) {
+            query = database.ref('noc').orderByChild("reason").equalTo(value);
+          }
+          var fragment = document.getElementById("noc_q");
+          var animalsArray = ["NOC Reference No", "NOC Origin Dept", "Applicant name", "Designation", "Proposed Country", "Purpose", "Duration",
+            "Passport No", "Dept Action if Any", "Service Particulars", "Date of NOC", "NOC Status", "If returned reason", "Frequency of NOC"];
+          var table = document.createElement("table");
+          table.id = "querynocresult";
+          var thead = document.createElement("thead");
+          var tr = document.createElement("tr");
+          for (var i = 0; i < animalsArray.length; i++) {
+
+            var td = document.createElement("th");
+            td.style.border = "1px solid black";
+            td.textContent = animalsArray[i];
+
+            tr.appendChild(td);
+
+          }
+          thead.appendChild(tr);
+          table.appendChild(tr);
+          fragment.appendChild(table);
+          document.body.appendChild(fragment);
+          query.once('value')
+            .then(function (dataSnapshot) {
+              var tbody = document.createElement("tbody");
+              dataSnapshot.forEach(function (child) {
+                tr = document.createElement("tr");
+                var value = child.val();
+                var td = document.createElement("td");
+                td.textContent = value.refno;
+                td.style.border = "1px solid black";
+                tr.append(td);
+                td = document.createElement("td");
+                td.style.border = "1px solid black";
+                td.textContent = value.origin;
+                tr.append(td);
+                td = document.createElement("td");
+                td.style.border = "1px solid black";
+                td.textContent = value.name;
+                tr.append(td);
+                td = document.createElement("td");
+                td.style.border = "1px solid black";
+                td.textContent = value.des;
+                tr.append(td);
+                td = document.createElement("td");
+                td.style.border = "1px solid black";
+                td.textContent = value.country;
+                tr.append(td);
+                td = document.createElement("td");
+                td.style.border = "1px solid black";
+                td.textContent = value.purpose;
+                tr.append(td);
+                td = document.createElement("td");
+                td.style.border = "1px solid black";
+                td.textContent = value.days;
+                tr.append(td);
+                td = document.createElement("td");
+                td.style.border = "1px solid black";
+                td.textContent = value.passport;
+                tr.append(td);
+                td = document.createElement("td");
+                td.style.border = "1px solid black";
+                td.textContent = value.deptaction;
+                tr.append(td);
+                td = document.createElement("td");
+                td.style.border = "1px solid black";
+                td.textContent = value.serviceparticular;
+                tr.append(td);
+                td = document.createElement("td");
+                td.style.border = "1px solid black";
+                td.textContent = value.date;
+                tr.append(td);
+                td = document.createElement("td");
+                td.style.border = "1px solid black";
+                td.textContent = value.approval;
+                tr.append(td);
+                td = document.createElement("td");
+                td.style.border = "1px solid black";
+                td.textContent = value.reason;
+                tr.append(td);
+                td = document.createElement("td");
+                td.style.border = "1px solid black";
+                td.textContent = value.frequency;
+                tr.append(td);
+                td = document.createElement("button");
+                td.style.border = "1px solid black";
+                td.textContent = "Delete";
+                td.addEventListener("click", function () {
+                  database.ref('noc').child(child.key).remove();
+                  formnocdata();
+                });
+                tr.append(td);
+
+                tbody.appendChild(tr);
+              });
+              table.style.border = "1px solid black";
+              table.appendChild(tbody);
+
+
+            });
+        }
+
+//
+      </script>
+      <div id="noc_1" class="tabcontent">
+        <!--<nav aria-label="breadcrumb" style="background-color:black">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="#">Home</a></li>
       <li class="breadcrumb-item active" aria-current="page">Library</li>
     </ol>
   </nav>-->
-  <h3>NOC</h3>
-  <form action="/action_page.php">
-    <div class="row" style="margin-left: 40px;">
-    <div class="col-sm-6" style="text-align: left;">
-      
-        <label for="no">NOC REFERENCE NO:</label><br>
-        <input type="text" id="no" name="fname" style="margin-left: 20px;"><br><br>
-        <label for="origin">NOC ORIGIN DEPT :</label><br>
-        <input type="text" id="origin" name="lname" style="margin-left: 20px;"><br><br>
-        <label for="name">APPLICANT NAME:</label><br>
-        <input type="text" id="name" name="lname" style="margin-left: 20px;"><br><br>
-        <label for="des">DESIGNATION:</label><br>
-        <input type="text" id="des" name="fname" style="margin-left: 20px;"><br><br><br><br>
-        <label for="country">PROPOSED COUNTRY:</label><br>
-        <input type="text" id="country" name="lname" style="margin-left: 20px;"><br><br>
-        <label for="purpose">PURPOSE:</label><br>
-        <input type="text" id="purpose" name="fname" style="margin-left: 20px;"><br><br>
-        <label for="days">Duration:</label><br>
-        <input type="text" id="days" name="lname" style="margin-left: 20px;"><br><br>
-     </div> 
-     <div class="col-sm-6" style="text-align: left;padding-left: 150px;">
-      
-      <label for="pass_no">PASSPORT NO:</label><br>
-      <input type="text" id="pass_no" name="fname" style="margin-left: 20px;"><br><br>
-      <label for="action">DEPT ACTION IF ANY :</label><br>
-      <input type="text" id="action" name="lname" style="margin-left: 20px;"><br><br>
-      <label for="service">SERVICE PARTICULARS:</label><br>
-      <input type="text" id="service" name="lname" style="margin-left: 20px;"><br><br>
-      <label for="date">DATE OF NOC:</label><br>
-      <input type="date" id="date" name="fname" style="margin-left: 20px;"><br><br><br><br>
-      <label for="purpose">NOC ISSUED/RETURNED:</label><br>
-      <select name="con" id="noc" style="margin-left: 20px;">
-        <option value="issue">ISSUED:</option>
-        <option value="return">RETURNED:</option>
-        
-      </select><br><br>
-      <label for="reason">If Returned Reason:</label>
-      <input type="text" id="reason" name="fname" style="margin-left: 20px;"><br><br>
-      <label for="fre">FREQUENCY OF NOC:</label>
-      <input type="text" id="fre" name="lname" style="margin-left: 20px;"><br><br>
-      
-    
-   </div> 
-     
-     </div>
-     <input class="btn btn-success" type="submit" value="Submit">
-     </form>
-</div>
+        <h3>NOC</h3>
+        <form action="" method="POST" id="nocform">
+          <div class="row" style="margin-left: 40px;">
+            <div class="col-sm-6" style="text-align: left;">
 
-<div id="queries" class="tabcontent">
-  <h3>QUERIES</h3>
-  <form action="/action_page.php">
-    <label for="scale"></label><br>
-    <input type="text" id="query_search" name="lname" style="margin-left: 20px;"><br><br><br><br>
-    
-    <div class="row" style="margin-left: 70px;">
-    <div class="col-sm-6" style="text-align: left;">
-      <input type="checkbox" id="ref_no" name="vehicle1" >
-      <label for="name">NAME OF VIP</label><br><br>
-      <input type="checkbox" id="name" name="vehicle2" >
-      <label for="origin"> DESIGNATION</label><br><br>
-      <input type="checkbox" id="name" name="vehicle3" >
-      <label for="name">SCALE OF SECURITY</label><br><br>
-      <input type="checkbox" id="des" name="vehicle1" >
-      <label for="des">DATE OF VISIT</label><br><br>
-      <input type="checkbox" id="country" name="vehicle2" >
-      <label for="country">PLACE OF STAY</label><br><br>
-      <input type="checkbox" id="name" name="vehicle3" >
-      <label for="name">PLACE OF VISIT</label><br><br>
-      <input type="checkbox" id="des" name="vehicle1" >
-      <label for="des">FUNCTION PLACE</label><br><br>
-      <input type="checkbox" id="country" name="vehicle2" >
-      <label for="country">TYPE OF FUNCTION</label><br><br>
-     
-    </div>
-    <div class="col-sm-6" style="text-align: left;padding-left: 160px;">
-      <input type="checkbox" id="purpose" name="vehicle3" >
-      <label for="purpose">AIRPORT</label><br><br>
-      <input type="checkbox" id="duration" name="vehicle3" >
-      <label for="duration">HELIPAD</label><br><br>    
-      <input type="checkbox" id="action" name="vehicle3" >
-      <label for="action">BR CAR</label><br><br>
-      <input type="checkbox" id="date" name="vehicle3" >
-      <label for="date">PSO</label><br><br>    
-      <input type="checkbox" id="reason" name="vehicle3" >
-      <label for="reason">NSG/CRPF/CISF</label><br><br>
-      <input type="checkbox" id="date" name="vehicle3" >
-      <label for="date">REMARKS</label><br><br>    
-      <input type="checkbox" id="reason" name="vehicle3" >
-      <label for="reason">DSR</label><br><br>
-    </div>
-    
-    </div>
-    <input class="btn btn-success"type="submit" value="Submit">
-    </form> 
-</div>
+              <label for="no">NOC REFERENCE NO:</label><br>
+              <input type="text" id="nocu_refno" name="fname" style="margin-left: 20px;"><br><br>
+              <label for="origin">NOC ORIGIN DEPT :</label><br>
+              <input type="text" id="nocu_origin" name="lname" style="margin-left: 20px;"><br><br>
+              <label for="name">APPLICANT NAME:</label><br>
+              <input type="text" id="nocu_name" name="lname" style="margin-left: 20px;"><br><br>
+              <label for="des">DESIGNATION:</label><br>
+              <input type="text" id="nocu_des" name="fname" style="margin-left: 20px;"><br><br><br><br>
+              <label for="country">PROPOSED COUNTRY:</label><br>
+              <input type="text" id="nocu_country" name="lname" style="margin-left: 20px;"><br><br>
+              <label for="purpose">PURPOSE:</label><br>
+              <input type="text" id="nocu_purpose" name="fname" style="margin-left: 20px;"><br><br>
+              <label for="days">Duration:</label><br>
+              <input type="text" id="nocu_days" name="lname" style="margin-left: 20px;"><br><br>
+            </div>
+            <div class="col-sm-6" style="text-align: left;padding-left: 150px;">
 
-</div>
-<script src="assets/vendor/jquery/jquery.min.js"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-<script src="assets/vendor/php-email-form/validate.js"></script>
-<script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="assets/vendor/venobox/venobox.min.js"></script>
-<script src="assets/vendor/aos/aos.js"></script>
+              <label for="pass_no">PASSPORT NO:</label><br>
+              <input type="text" id="nocu_passno" name="fname" style="margin-left: 20px;"><br><br>
+              <label for="action">DEPT ACTION IF ANY :</label><br>
+              <input type="text" id="nocu_action" name="lname" style="margin-left: 20px;"><br><br>
+              <label for="service">SERVICE PARTICULARS:</label><br>
+              <input type="text" id="nocu_service" name="lname" style="margin-left: 20px;"><br><br>
+              <label for="date">DATE OF NOC:</label><br>
+              <input type="date" id="nocu_date" name="fname" style="margin-left: 20px;"><br><br><br><br>
+              <label for="purpose">NOC ISSUED/RETURNED:</label><br>
+              <select name="con" id="nocu_approved" style="margin-left: 20px;">
+                <option value="issue">ISSUED:</option>
+                <option value="return">RETURNED:</option>
 
-<script src="index.js"></script>
-<script>
-function openCity(evt, cityName) {
-  var i, tabcontent, tablinks;
-  var x = document.getElementsByClassName("homee");
-  tabcontent = document.getElementsByClassName("tabcontent");
-  homee=document.getElementsByClassName("homee");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  
-  }
-  
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-    tablinks[i].style.display = "block";
-    
-    
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-  
-  
-}
-</script>
-<script src='https://unpkg.com/splitting@next/dist/splitting.js'>
-</script>
-   <script src="clock.js"></script>
+              </select><br><br>
+              <label for="reason">If Returned Reason:</label>
+              <input type="text" id="nocu_reason" name="fname" style="margin-left: 20px;"><br><br>
+              <label for="fre">FREQUENCY OF NOC:</label>
+              <input type="text" id="nocu_fre" name="lname" style="margin-left: 20px;"><br><br>
+
+
+            </div>
+
+          </div>
+          <input class="btn btn-success" type="submit" value="Submit">
+        </form>
+      </div>
+      <script>
+        document.getElementById('nocform').addEventListener('submit', formnocSubmit);
+
+        function formnocSubmit(e) {
+          e.preventDefault();
+          let refno = document.querySelector('#nocu_refno').value;
+          let origin = document.querySelector('#nocu_origin').value;
+          let name = document.querySelector('#nocu_name').value;
+          let des = document.querySelector('#nocu_des').value;
+          let country = document.querySelector('#nocu_country').value;
+          let purpose = document.querySelector('#nocu_purpose').value;
+          let days = document.querySelector('#nocu_days').value;
+          let passport = document.querySelector('#nocu_passno').value;
+          let deptaction = document.querySelector('#nocu_action').value;
+          let serviceparticular = document.querySelector('#nocu_service').value;
+          let date = document.querySelector('#nocu_date').value;
+          let approval = document.querySelector('#nocu_approved').value;
+          let reason = document.querySelector('#nocu_reason').value;
+          let frequency = document.querySelector('#nocu_fre').value;
+          database.ref('noc').push({
+            refno: refno, origin: origin, name: name, des: des, country: country, purpose: purpose, days: days, passport: passport, deptaction: deptaction,
+            serviceparticular: serviceparticular, date: date, approval: approval, reason: reason, frequency: frequency
+          });
+          document.getElementById('nocform').reset();
+        } 
+      </script>
+      <div id="queries" class="tabcontent">
+        <h3>QUERIES</h3>
+        <form action="" method="POST" id="queryform">
+          <label for="scale"></label><br>
+          <input type="text" id="query_search" name="lname" style="margin-left: 20px;"><br><br><br><br>
+
+          <div class="row" style="margin-left: 70px;">
+            <div class="col-sm-6" style="text-align: left;">
+              <input type="checkbox" id="ref_name" name="vehicle1">
+              <label for="name">NAME OF VIP</label><br><br>
+              <input type="checkbox" id="ref_des" name="vehicle2">
+              <label for="origin"> DESIGNATION</label><br><br>
+              <input type="checkbox" id="ref_scale" name="vehicle3">
+              <label for="name">SCALE OF SECURITY</label><br><br>
+              <input type="checkbox" id="ref_date" name="vehicle1">
+              <label for="des">DATE OF VISIT</label><br><br>
+              <input type="checkbox" id="ref_placeofstay" name="vehicle2">
+              <label for="country">PLACE OF STAY</label><br><br>
+              <input type="checkbox" id="ref_placeofvisit" name="vehicle3">
+              <label for="name">PLACE OF VISIT</label><br><br>
+              <input type="checkbox" id="ref_functionplace" name="vehicle1">
+              <label for="des">FUNCTION PLACE</label><br><br>
+              <input type="checkbox" id="ref_purpose" name="vehicle2">
+              <label for="country">TYPE OF FUNCTION</label><br><br>
+
+            </div>
+            <div class="col-sm-6" style="text-align: left;padding-left: 160px;">
+              <input type="checkbox" id="ref_airport" name="vehicle3">
+              <label for="purpose">AIRPORT</label><br><br>
+              <input type="checkbox" id="ref_helipad" name="vehicle3">
+              <label for="duration">HELIPAD</label><br><br>
+              <input type="checkbox" id="ref_car" name="vehicle3">
+              <label for="action">BR CAR</label><br><br>
+              <input type="checkbox" id="ref_pso" name="vehicle3">
+              <label for="date">PSO</label><br><br>
+              <input type="checkbox" id="ref_typeofforce" name="vehicle3">
+              <label for="reason">NSG/CRPF/CISF</label><br><br>
+              <input type="checkbox" id="ref_remarks" name="vehicle3">
+              <label for="date">REMARKS</label><br><br>
+              <input type="checkbox" id="ref_dsr" name="vehicle3">
+              <label for="reason">DSR</label><br><br>
+            </div>
+
+          </div>
+          <input class="btn btn-success" type="submit" value="Submit">
+        </form>
+        <button id="print">Print</button>
+        <script>
+          function printData() {
+            var divToPrint = document.getElementById("queryresult");
+            newWin = window.open("");
+            newWin.document.write(divToPrint.outerHTML);
+            newWin.print();
+            newWin.close();
+          }
+          document.getElementById('print').addEventListener('click', printData);
+          document.getElementById('queryform').addEventListener('submit', formSubmit);
+
+          function formSubmit(e) {
+            try {
+              var removeTab = document.getElementById('queryresult');
+              var parentEl = removeTab.parentElement;
+              parentEl.removeChild(removeTab);
+            } catch (err) {
+
+            }
+            e.preventDefault();
+            let name = document.querySelector('#ref_name').checked;
+            let value = document.querySelector('#query_search').value;
+            let designation = document.querySelector('#ref_des').checked;
+            let scale = document.querySelector('#ref_scale').checked;
+            let date = document.querySelector('#ref_date').checked;
+            let placeofstay = document.querySelector('#ref_placeofstay').checked;
+            let placeofvisit = document.querySelector('#ref_placeofvisit').checked;
+            let functio = document.querySelector('#ref_functionplace').checked;
+            let purpose = document.querySelector('#ref_purpose').checked;
+            let airport = document.querySelector('#ref_airport').checked;
+            let helipad = document.querySelector('#ref_helipad').checked;
+            let brcar = document.querySelector('#ref_car').checked;
+            let pso = document.querySelector('#ref_pso').checked;
+            let typeofforce = document.querySelector('#ref_typeofforce').checked;
+            let remarks = document.querySelector('#ref_remarks').checked;
+            let dsr = document.querySelector('#ref_dsr').checked;
+            let query;
+            if (name) {
+              query = database.ref('vipmovement').orderByChild("name").equalTo(value);
+            }
+            else if (designation) {
+              query = database.ref('vipmovement').orderByChild("des").equalTo(value);
+            }
+            else if (scale) {
+              query = database.ref('vipmovement').orderByChild("scale").equalTo(value);
+            }
+            else if (date) {
+              query = database.ref('vipmovement').orderByChild("date").equalTo(value);
+            }
+            else if (placeofstay) {
+              query = database.ref('vipmovement').orderByChild("stay").equalTo(value);
+            }
+            else if (placeofvisit) {
+              query = database.ref('vipmovement').orderByChild("place").equalTo(value);
+            }
+            else if (functio) {
+              query = database.ref('vipmovement').orderByChild("function").equalTo(value);
+            }
+            else if (purpose) {
+              query = database.ref('vipmovement').orderByChild("purpose").equalTo(value);
+            }
+            else if (airport) {
+              query = database.ref('vipmovement').orderByChild("a_from").equalTo(value);
+            }
+            else if (helipad) {
+              query = database.ref('vipmovement').orderByChild("h_from").equalTo(value);
+            }
+            else if (brcar) {
+              query = database.ref('vipmovement').orderByChild("br").equalTo(value);
+            }
+            else if (pso) {
+              query = database.ref('vipmovement').orderByChild("pso").equalTo(value);
+            }
+            else if (typeofforce) {
+              query = database.ref('vipmovement').orderByChild("typeofforce").equalTo(value);
+            }
+            else if (remarks) {
+              query = database.ref('vipmovement').orderByChild("remarks").equalTo(value);
+            }
+            else if (dsr) {
+              query = database.ref('vipmovement').orderByChild("dsr").equalTo(value);
+            }
+            var fragment = document.getElementById("queries");
+            var animalsArray = ["Name of Vip", "Designation", "Scale of Security", "Date", "Purpose of Visit", "Place of Stay", "Place of Visit",
+              "Function Places", "Types of Functions", "Airport From", "Airport To", "Helipad From", "Helipad To", "BR Car", "If not Provided",
+              "Reason", "PSO Car", "PSO car if not provided", "Reason", "NSG/CRPF/CISF", "Remarks", "DSR"];
+            var table = document.createElement("table");
+            table.id = "queryresult";
+            var thead = document.createElement("thead");
+            var tr = document.createElement("tr");
+            for (var i = 0; i < animalsArray.length; i++) {
+
+              var td = document.createElement("th");
+              td.style.border = "1px solid black";
+              td.textContent = animalsArray[i];
+
+              tr.appendChild(td);
+
+            }
+            thead.appendChild(tr);
+            table.appendChild(tr);
+            fragment.appendChild(table);
+            document.body.appendChild(fragment);
+            query.once('value')
+              .then(function (dataSnapshot) {
+                var tbody = document.createElement("tbody");
+                dataSnapshot.forEach(function (child) {
+                  tr = document.createElement("tr");
+                  var value = child.val();
+                  var td = document.createElement("td");
+                  td.textContent = value.name;
+                  td.style.border = "1px solid black";
+                  tr.append(td);
+                  td = document.createElement("td");
+                  td.style.border = "1px solid black";
+                  td.textContent = value.des;
+                  tr.append(td);
+                  td = document.createElement("td");
+                  td.style.border = "1px solid black";
+                  td.textContent = value.scale;
+                  tr.append(td);
+                  td = document.createElement("td");
+                  td.style.border = "1px solid black";
+                  td.textContent = value.date;
+                  tr.append(td);
+                  td = document.createElement("td");
+                  td.style.border = "1px solid black";
+                  td.textContent = value.purpose;
+                  tr.append(td);
+                  td = document.createElement("td");
+                  td.style.border = "1px solid black";
+                  td.textContent = value.stay;
+                  tr.append(td);
+                  td = document.createElement("td");
+                  td.style.border = "1px solid black";
+                  td.textContent = value.place;
+                  tr.append(td);
+                  td = document.createElement("td");
+                  td.style.border = "1px solid black";
+                  td.textContent = value.function;
+                  tr.append(td);
+                  td = document.createElement("td");
+                  td.style.border = "1px solid black";
+                  td.textContent = value.type;
+                  tr.append(td);
+                  td = document.createElement("td");
+                  td.style.border = "1px solid black";
+                  td.textContent = value.a_from;
+                  tr.append(td);
+                  td = document.createElement("td");
+                  td.style.border = "1px solid black";
+                  td.textContent = value.a_to;
+                  tr.append(td);
+                  td = document.createElement("td");
+                  td.style.border = "1px solid black";
+                  td.textContent = value.h_from;
+                  tr.append(td);
+                  td = document.createElement("td");
+                  td.style.border = "1px solid black";
+                  td.textContent = value.h_to;
+                  tr.append(td);
+                  td = document.createElement("td");
+                  td.style.border = "1px solid black";
+                  td.textContent = value.br;
+                  tr.append(td);
+                  td = document.createElement("td");
+                  td.style.border = "1px solid black";
+                  td.textContent = value.br_pro;
+                  tr.append(td);
+                  td = document.createElement("td");
+                  td.style.border = "1px solid black";
+                  td.textContent = value.br_reason;
+                  tr.append(td);
+                  td = document.createElement("td");
+                  td.style.border = "1px solid black";
+                  td.textContent = value.pso;
+                  tr.append(td);
+                  td = document.createElement("td");
+                  td.style.border = "1px solid black";
+                  td.textContent = value.pso_pro;
+                  tr.append(td);
+                  td = document.createElement("td");
+                  td.style.border = "1px solid black";
+                  td.textContent = value.pso_reason;
+                  tr.append(td);
+                  td = document.createElement("td");
+                  td.style.border = "1px solid black";
+                  td.textContent = value.typeofforce;
+                  tr.append(td);
+                  td = document.createElement("td");
+                  td.style.border = "1px solid black";
+                  td.textContent = value.remarks;
+                  tr.append(td);
+                  td = document.createElement("td");
+                  td.style.border = "1px solid black";
+                  td.textContent = value.dsr;
+                  tr.append(td);
+                  //
+                  td = document.createElement("a");
+                  td.style.border = "1px solid black";
+                  var link = document.createTextNode("This is link"); 
+                  td.appendChild(link);  
+                  td.title = "Link";
+                  td.target="_blank";
+                  td.href = value.link;
+                  tr.append(td);
+                  //
+                  td = document.createElement("button");
+                  td.style.border = "1px solid black";
+                  td.textContent = "Delete";
+                  td.addEventListener("click", function () {
+                    database.ref('vipmovement').child(child.key).remove();
+                    formSubmit();
+                  });
+                  tr.append(td);
+                  tbody.appendChild(tr);
+                });
+                table.style.border = "1px solid black";
+                table.appendChild(tbody);
+
+
+              });
+          }
+        </script>
+      </div>
+    </div>
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="node_modules/tablefilter/dist/tablefilter/tablefilter.js"></script>
+    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/venobox/venobox.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+
+    <script src="index.js"></script>
+    <script>
+      function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        var x = document.getElementsByClassName("homee");
+        tabcontent = document.getElementsByClassName("tabcontent");
+        homee = document.getElementsByClassName("homee");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+
+        }
+
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+          tablinks[i].style.display = "block";
+
+
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+
+
+      }
+    </script>
+
 </body>
-</html> 
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBkcjzoaS4oCj4eK_N-o61eMwNsC9fSHR0",
+    authDomain: "cbcid-baa92.firebaseapp.com",
+    databaseURL: "https://cbcid-baa92.firebaseio.com",
+    projectId: "cbcid-baa92",
+    storageBucket: "cbcid-baa92.appspot.com",
+    messagingSenderId: "715309161260",
+    appId: "1:715309161260:web:086c5f376d8a8df1626a89",
+    measurementId: "G-5KK7CRXE0F"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  const database = firebase.database();
+  const storage = firebase.storage();
+</script>
+
+</html>

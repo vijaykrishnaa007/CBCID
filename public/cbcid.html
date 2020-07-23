@@ -215,6 +215,7 @@
             <br><br>
             <button id="protocteedata">Submit</button>
             <button id="printproctocee">Print</button>
+            <button id="allprintproctocee">All Data</button>
           </div>
           <script>
             function printpData() {
@@ -226,6 +227,7 @@
             }
             document.getElementById('printproctocee').addEventListener('click', printpData);
             document.getElementById("protocteedata").addEventListener('click', retrieve);
+            document.getElementById("allprintproctocee").addEventListener('click', retrieveall);
             function retrieve() {
               try {
                 var removeTab = document.getElementById('scaleresult');
@@ -256,6 +258,71 @@
               fragment.appendChild(table);
               document.body.appendChild(fragment);
               database.ref('scaleofsecurity').orderByChild('scale').equalTo(value).once('value')
+                .then(function (dataSnapshot) {
+                  var tbody = document.createElement("tbody");
+                  console.log("sguv");
+                  dataSnapshot.forEach(function (child) {
+                    tr = document.createElement("tr");
+                    var value = child.val();
+                    var td = document.createElement("td");
+                    td.textContent = value.name;
+                    td.style.border = "1px solid black";
+                    tr.append(td);
+                    td = document.createElement("td");
+                    td.style.border = "1px solid black";
+                    td.textContent = value.des;
+                    tr.append(td);
+                    td = document.createElement("td");
+                    td.style.border = "1px solid black";
+                    td.textContent = value.scale;
+                    tr.append(td);
+                    td = document.createElement("button");
+                    td.style.border = "1px solid black";
+                    td.textContent = "Delete";
+                    td.addEventListener("click", function () {
+                      database.ref('scaleofsecurity').child(child.key).remove();
+                      retrieve();
+                    });
+                    tr.append(td);
+                    tbody.appendChild(tr);
+                  });
+                  table.style.border = "1px solid black";
+                  table.appendChild(tbody);
+
+
+                });
+              //
+            }
+            function retrieveall() {
+              try {
+                var removeTab = document.getElementById('scaleresult');
+                var parentEl = removeTab.parentElement;
+                parentEl.removeChild(removeTab);
+              } catch (err) {
+
+              }
+              let value = document.getElementById("qs_scale").value;
+              //
+              var fragment = document.getElementById("scale");
+              var animalsArray = ["Name of Vip", "Designation", "Scale"];
+              var table = document.createElement("table");
+              table.id = "scaleresult";
+              var thead = document.createElement("thead");
+              var tr = document.createElement("tr");
+              for (var i = 0; i < animalsArray.length; i++) {
+
+                var td = document.createElement("th");
+                td.style.border = "1px solid black";
+                td.textContent = animalsArray[i];
+
+                tr.appendChild(td);
+
+              }
+              thead.appendChild(tr);
+              table.appendChild(tr);
+              fragment.appendChild(table);
+              document.body.appendChild(fragment);
+              database.ref('scaleofsecurity').orderByChild('scale').once('value')
                 .then(function (dataSnapshot) {
                   var tbody = document.createElement("tbody");
                   console.log("sguv");
@@ -532,6 +599,9 @@
           else if (airport) {
             query = database.ref('noc').orderByChild("reason").equalTo(value);
           }
+          else{
+            query = database.ref('noc');
+          }
           var fragment = document.getElementById("noc_q");
           var animalsArray = ["NOC Reference No", "NOC Origin Dept", "Applicant name", "Designation", "Proposed Country", "Purpose", "Duration",
             "Passport No", "Dept Action if Any", "Service Particulars", "Date of NOC", "NOC Status", "If returned reason", "Frequency of NOC"];
@@ -772,7 +842,6 @@
           }
           document.getElementById('print').addEventListener('click', printData);
           document.getElementById('queryform').addEventListener('submit', formSubmit);
-
           function formSubmit(e) {
             try {
               var removeTab = document.getElementById('queryresult');
@@ -843,6 +912,9 @@
             }
             else if (dsr) {
               query = database.ref('vipmovement').orderByChild("dsr").equalTo(value);
+            }
+            else{
+              query = database.ref('vipmovement');
             }
             var fragment = document.getElementById("queries");
             var animalsArray = ["Name of Vip", "Designation", "Scale of Security", "Date", "Purpose of Visit", "Place of Stay", "Place of Visit",

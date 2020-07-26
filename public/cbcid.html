@@ -8,6 +8,18 @@
   <title>CBCID </title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+
+  <script type="text/javascript" charset="utf8"
+    src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
 
 
   <link href="assets/img/cbcid/download__1_-removebg-preview.png" rel="icon">
@@ -184,16 +196,33 @@
               </div>
             </div>
           </div>
-          <input class="btn btn-success" type="submit" value="Submit">
+          <input class="btn btn-success" type="submit" value="Submit" data-toggle="modal" data-target="#myModal">
         </form>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog modal-sm">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+
+              <div class="modal-body">
+                <p>The form has been submitted Successfully</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
         <script>
           document.getElementById('officerform').addEventListener('submit', formofficerSubmit);
 
           function formofficerSubmit(e) {
             e.preventDefault();
-            let name = document.querySelector('#s_name').value;
-            let des = document.querySelector('#s_des').value;
-            let scale = document.querySelector('#s_scale').value;
+            let name = document.querySelector('#s_name').value.toUpperCase();
+            let des = document.querySelector('#s_des').value.toUpperCase();
+            let scale = document.querySelector('#s_scale').value.toUpperCase();
             database.ref('scaleofsecurity').push({ name: name, des: des, scale: scale });
             document.getElementById('officerform').reset();
           }
@@ -213,10 +242,12 @@
               <option value="X">X</option>
             </select>
             <br><br>
-            <button id="protocteedata">Submit</button>
-            <button id="printproctocee">Print</button>
-            <button id="allprintproctocee">All Data</button>
+            <button class="btn btn-success" id="protocteedata">Submit</button>
+            <button class="btn btn-warning" id="printproctocee">Print</button>
+            <button class="btn btn-info" id="allprintproctocee">All Data</button>
           </div>
+          <div style="margin-top: 30px;"></div>
+
           <script>
             function printpData() {
               var divToPrint = document.getElementById("scaleresult");
@@ -242,6 +273,8 @@
               var animalsArray = ["Name of Vip", "Designation", "Scale"];
               var table = document.createElement("table");
               table.id = "scaleresult";
+              table.style.marginTop = "50px";
+              table.style.marginLeft = "550px";
               var thead = document.createElement("thead");
               var tr = document.createElement("tr");
               for (var i = 0; i < animalsArray.length; i++) {
@@ -307,6 +340,8 @@
               var animalsArray = ["Name of Vip", "Designation", "Scale"];
               var table = document.createElement("table");
               table.id = "scaleresult";
+              table.style.marginTop = "50px";
+              table.style.marginLeft = "550px";
               var thead = document.createElement("thead");
               var tr = document.createElement("tr");
               for (var i = 0; i < animalsArray.length; i++) {
@@ -404,22 +439,49 @@
               <input type="text" id="h_to" name="fname" style="margin-left: 20px;"><br><br>
 
               <label for="des">BR Car :</label><br>
-              <input type="text" id="br" name="lname" style="margin-left: 20px;"><br><br>
+              <input type="radio" id="br" name="lname" value="Yes" style="margin-left: 20px;">Yes
 
-              <label for="des">If not Provided:</label><br>
-              <input type="text" id="br_pro" name="lname" style="margin-left: 20px;"><br><br>
-              <label for="des">Reason:</label><br>
-              <input type="text" id="br_reason" name="lname" style="margin-left: 25px;"><br><br>
+              <!--<label for="des">If not Provided:</label><br>-->
+              <input type="radio" id="br_pro" name="lname" value="No" style="margin-left: 20px;">No<br>
+
+              <input type="text" id="br_reason" name="lname" style="margin-left: 25px;display: none;"><br><br>
 
 
-              <label for="des">PSO Car :</label><br>
-              <input type="text" id="pso" name="lname" style="margin-left: 20px;"><br><br>
+              <script>
+                $(document).ready(function () {
+                  $("input[type='radio']").change(function () {
+                    if ($(this).val() == "No") {
+                      $("#br_reason").show();
+                    }
+                    else {
+                      $("#br_reason").hide();
+                    }
+                  });
+                });
+              </script>
 
-              <label for="des">If not Provided:</label><br>
-              <input type="text" id="pso_pro" name="lname" style="margin-left: 20px;"><br><br>
-              <label for="des">Reason:</label><br>
-              <input type="text" id="pso_reason" name="lname" style="margin-left: 20px;"><br><br>
 
+              <label for="des">PSO:</label><br>
+              <input type="radio" id="pso" name="lname" value="Yes" style="margin-left: 20px;">Yes
+
+
+              <input type="radio" id="pso_pro" name="lname" value="No" style="margin-left: 20px;">No<br><br>
+              <div id="pso" style="display: none;">
+                <label for="des">Reason:</label><br>
+                <input type="text" id="pso_reason" name="lname" style="margin-left: 20px;"><br><br>
+              </div>
+              <script>
+                $(document).ready(function () {
+                  $("input[type='radio']").change(function () {
+                    if ($(this).val() == "No") {
+                      $("#pso").show();
+                    }
+                    else {
+                      $("#pso").hide();
+                    }
+                  });
+                });
+              </script>
 
               <label for="scale">NSG/CRPF/CISF:</label><br>
               <input type="text" id="typeofforce" name="lname" style="margin-left: 20px;"><br><br><br><br>
@@ -434,8 +496,24 @@
           <label for="scale">Attach DSR:</label>
           <!--<input type="text" id="dsr" name="lname"><br>-->
           <input type="file" id="fileToUpload"><br>
-          <input class="btn btn-success" type="submit" value="Submit">
+          <input class="btn btn-success" type="submit" value="Submit" data-toggle="modal" data-target="#exampleModal">
         </form>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-sm" role="document" style="color:black">
+            <div class="modal-content">
+
+              <div class="modal-body">
+                The form has been submitted Successfully!!!
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="cof" class="tabcontent">
@@ -454,28 +532,27 @@
 
         function formSubmit(e) {
           e.preventDefault();
-          let name = document.querySelector('#name').value;
-          let des = document.querySelector('#des').value;
-          let scale = document.querySelector('#scale7').value;
-          let date = document.querySelector('#date').value;
-          let purpose = document.querySelector('#purpose').value;
-          let stay = document.querySelector('#stay').value;
-          let place = document.querySelector('#place').value;
-          let functio = document.querySelector('#function').value;
-          let type = document.querySelector('#type').value;
-          let a_from = document.querySelector('#a_from').value;
-          let a_to = document.querySelector('#a_to').value;
-          let h_from = document.querySelector('#h_from').value;
-          let h_to = document.querySelector('#h_to').value;
-          let br = document.querySelector('#br').value;
-          let br_pro = document.querySelector('#br_pro').value;
-          let br_reason = document.querySelector('#br_reason').value;
-          let pso = document.querySelector('#pso').value;
-          let pso_pro = document.querySelector('#pso_pro').value;
-          let pso_reason = document.querySelector('#pso_reason').value;
-          let typeofforce = document.querySelector('#typeofforce').value;
-          let remarks = document.querySelector('#remarks').value;
-          let dsr = document.querySelector('#dsr').value;
+          let name = document.querySelector('#name').value.toUpperCase();
+          let des = document.querySelector('#des').value.toUpperCase();
+          let scale = document.querySelector('#scale7').value.toUpperCase();
+          let date = document.querySelector('#date').value.toUpperCase();
+          let purpose = document.querySelector('#purpose').value.toUpperCase();
+          let stay = document.querySelector('#stay').value.toUpperCase();
+          let place = document.querySelector('#place').value.toUpperCase();
+          let functio = document.querySelector('#function').value.toUpperCase();
+          let type = document.querySelector('#type').value.toUpperCase();
+          let a_from = document.querySelector('#a_from').value.toUpperCase();
+          let a_to = document.querySelector('#a_to').value.toUpperCase();
+          let h_from = document.querySelector('#h_from').value.toUpperCase();
+          let h_to = document.querySelector('#h_to').value.toUpperCase();
+          let br = document.querySelector('#br').value.toUpperCase();
+          let br_pro = document.querySelector('#br_pro').value.toUpperCase();
+          let br_reason = document.querySelector('#br_reason').value.toUpperCase();
+          let pso = document.querySelector('#pso').value.toUpperCase();
+          let pso_pro = document.querySelector('#pso_pro').value.toUpperCase();
+          let pso_reason = document.querySelector('#pso_reason').value.toUpperCase();
+          let typeofforce = document.querySelector('#typeofforce').value.toUpperCase();
+          let remarks = document.querySelector('#remarks').value.toUpperCase();
           var file = document.querySelector("#fileToUpload").files[0];
           const metadata = { contentType: file.type };
           storage.ref().child('vipmovement/' + uuidv4()).put(file, metadata).then(function (snapshot) {
@@ -483,7 +560,7 @@
               database.ref('vipmovement').push({
                 name: name, des: des, scale: scale, date: date, purpose: purpose, stay: stay, place: place, function: functio
                 , type: type, a_from: a_from, a_to: a_to, h_from: h_from, h_to: h_to, br: br, br_pro: br_pro, br_reason: br_reason, pso: pso, pso_pro: pso_pro, pso_reason: pso_reason
-                , typeofforce: typeofforce, remarks: remarks, dsr: dsr, link: url
+                , typeofforce: typeofforce, remarks: remarks, link: url
               });
             });
 
@@ -536,8 +613,9 @@
 
           </div>
           <input class="btn btn-success" type="submit" value="Submit">
+          <button class="btn btn-warning" id="printnoc">Print</button>
         </form>
-        <button id="printnoc">Print</button>
+
       </div>
       <script>
         //
@@ -555,7 +633,7 @@
           try {
             var removeTab = document.getElementById('querynocresult');
             var parentEl = removeTab.parentElement;
-            parentEl.removeChild(removeTab);
+            parentEl.innerHTML="";
           } catch (err) {
 
           }
@@ -599,14 +677,15 @@
           else if (airport) {
             query = database.ref('noc').orderByChild("reason").equalTo(value);
           }
-          else{
+          else {
             query = database.ref('noc');
           }
           var fragment = document.getElementById("noc_q");
-          var animalsArray = ["NOC Reference No", "NOC Origin Dept", "Applicant name", "Designation", "Proposed Country", "Purpose", "Duration",
+          var animalsArray = ["NOC Reference No", " Origin NOC Dept", "Applicant name", "Designation", "Proposed Country", "Purpose", "Duration",
             "Passport No", "Dept Action if Any", "Service Particulars", "Date of NOC", "NOC Status", "If returned reason", "Frequency of NOC"];
           var table = document.createElement("table");
           table.id = "querynocresult";
+          table.style.marginTop = "50px";
           var thead = document.createElement("thead");
           var tr = document.createElement("tr");
           for (var i = 0; i < animalsArray.length; i++) {
@@ -619,7 +698,7 @@
 
           }
           thead.appendChild(tr);
-          table.appendChild(tr);
+          table.appendChild(thead);
           fragment.appendChild(table);
           document.body.appendChild(fragment);
           query.once('value')
@@ -697,7 +776,26 @@
               });
               table.style.border = "1px solid black";
               table.appendChild(tbody);
+              $(document).ready(function () {
+                  // Setup - add a text input to each footer cell
+                  $('#querynocresult thead th').each(function () {
+                    var title = $('#querynocresult thead th').eq($(this).index()).text();
+                    $(this).html('<input type=text placeholder=' +title+' >');
+                  });
 
+                  // DataTable
+                  var table = $('#querynocresult').DataTable();
+
+                  // Apply the search
+                  table.columns().eq(0).each(function (colIdx) {
+                    $('input', table.column(colIdx).header()).on('keyup change', function () {
+                      table
+                        .column(colIdx)
+                        .search(this.value)
+                        .draw();
+                    });
+                  });
+                });
 
             });
         }
@@ -756,28 +854,43 @@
             </div>
 
           </div>
-          <input class="btn btn-success" type="submit" value="Submit">
+          <input class="btn btn-success" type="submit" value="Submit" data-toggle="modal" data-target="#exampleModal">
         </form>
+      </div>
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document" style="color:black">
+          <div class="modal-content">
+
+            <div class="modal-body">
+              The form has been submitted Successfully!!!
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+            </div>
+          </div>
+        </div>
       </div>
       <script>
         document.getElementById('nocform').addEventListener('submit', formnocSubmit);
 
         function formnocSubmit(e) {
           e.preventDefault();
-          let refno = document.querySelector('#nocu_refno').value;
-          let origin = document.querySelector('#nocu_origin').value;
-          let name = document.querySelector('#nocu_name').value;
-          let des = document.querySelector('#nocu_des').value;
-          let country = document.querySelector('#nocu_country').value;
-          let purpose = document.querySelector('#nocu_purpose').value;
-          let days = document.querySelector('#nocu_days').value;
-          let passport = document.querySelector('#nocu_passno').value;
-          let deptaction = document.querySelector('#nocu_action').value;
-          let serviceparticular = document.querySelector('#nocu_service').value;
-          let date = document.querySelector('#nocu_date').value;
-          let approval = document.querySelector('#nocu_approved').value;
-          let reason = document.querySelector('#nocu_reason').value;
-          let frequency = document.querySelector('#nocu_fre').value;
+          let refno = document.querySelector('#nocu_refno').value.toUpperCase();
+          let origin = document.querySelector('#nocu_origin').value.toUpperCase();
+          let name = document.querySelector('#nocu_name').value.toUpperCase();
+          let des = document.querySelector('#nocu_des').value.toUpperCase();
+          let country = document.querySelector('#nocu_country').value.toUpperCase();
+          let purpose = document.querySelector('#nocu_purpose').value.toUpperCase();
+          let days = document.querySelector('#nocu_days').value.toUpperCase();
+          let passport = document.querySelector('#nocu_passno').value.toUpperCase();
+          let deptaction = document.querySelector('#nocu_action').value.toUpperCase();
+          let serviceparticular = document.querySelector('#nocu_service').value.toUpperCase();
+          let date = document.querySelector('#nocu_date').value.toUpperCase();
+          let approval = document.querySelector('#nocu_approved').value.toUpperCase();
+          let reason = document.querySelector('#nocu_reason').value.toUpperCase();
+          let frequency = document.querySelector('#nocu_fre').value.toUpperCase();
           database.ref('noc').push({
             refno: refno, origin: origin, name: name, des: des, country: country, purpose: purpose, days: days, passport: passport, deptaction: deptaction,
             serviceparticular: serviceparticular, date: date, approval: approval, reason: reason, frequency: frequency
@@ -830,8 +943,9 @@
 
           </div>
           <input class="btn btn-success" type="submit" value="Submit">
+          <button class="btn btn-warning" id="print">Print</button>
         </form>
-        <button id="print">Print</button>
+
         <script>
           function printData() {
             var divToPrint = document.getElementById("queryresult");
@@ -846,13 +960,13 @@
             try {
               var removeTab = document.getElementById('queryresult');
               var parentEl = removeTab.parentElement;
-              parentEl.removeChild(removeTab);
+              parentEl.innerHTML="";
             } catch (err) {
 
             }
             e.preventDefault();
             let name = document.querySelector('#ref_name').checked;
-            let value = document.querySelector('#query_search').value;
+            let value = document.querySelector('#query_search').value.toUpperCase();
             let designation = document.querySelector('#ref_des').checked;
             let scale = document.querySelector('#ref_scale').checked;
             let date = document.querySelector('#ref_date').checked;
@@ -913,15 +1027,16 @@
             else if (dsr) {
               query = database.ref('vipmovement').orderByChild("dsr").equalTo(value);
             }
-            else{
+            else {
               query = database.ref('vipmovement');
             }
             var fragment = document.getElementById("queries");
             var animalsArray = ["Name of Vip", "Designation", "Scale of Security", "Date", "Purpose of Visit", "Place of Stay", "Place of Visit",
-              "Function Places", "Types of Functions", "Airport From", "Airport To", "Helipad From", "Helipad To", "BR Car", "If not Provided",
-              "Reason", "PSO Car", "PSO car if not provided", "Reason", "NSG/CRPF/CISF", "Remarks", "DSR"];
+              "Function Places", "Types of Functions", "Airport From", "Airport To", "Helipad From", "Helipad To", "BR Car",
+              "Reason", "PSO Car", "Reason", "NSG/CRPF/CISF", "Remarks", "DSR"];
             var table = document.createElement("table");
             table.id = "queryresult";
+            table.style.marginTop = "50px";
             var thead = document.createElement("thead");
             var tr = document.createElement("tr");
             for (var i = 0; i < animalsArray.length; i++) {
@@ -934,7 +1049,7 @@
 
             }
             thead.appendChild(tr);
-            table.appendChild(tr);
+            table.appendChild(thead);
             fragment.appendChild(table);
             document.body.appendChild(fragment);
             query.once('value')
@@ -999,14 +1114,14 @@
                   td.style.border = "1px solid black";
                   td.textContent = value.br;
                   tr.append(td);
-                  td = document.createElement("td");
+                  /*td = document.createElement("td");
                   td.style.border = "1px solid black";
                   td.textContent = value.br_pro;
                   tr.append(td);
                   td = document.createElement("td");
                   td.style.border = "1px solid black";
                   td.textContent = value.br_reason;
-                  tr.append(td);
+                  tr.append(td);*/
                   td = document.createElement("td");
                   td.style.border = "1px solid black";
                   td.textContent = value.pso;
@@ -1034,10 +1149,10 @@
                   //
                   td = document.createElement("a");
                   td.style.border = "1px solid black";
-                  var link = document.createTextNode("This is link"); 
-                  td.appendChild(link);  
+                  var link = document.createTextNode("This is link");
+                  td.appendChild(link);
                   td.title = "Link";
-                  td.target="_blank";
+                  td.target = "_blank";
                   td.href = value.link;
                   tr.append(td);
                   //
@@ -1053,22 +1168,34 @@
                 });
                 table.style.border = "1px solid black";
                 table.appendChild(tbody);
+                $(document).ready(function () {
+                  // Setup - add a text input to each footer cell
+                  $('#queryresult thead th').each(function () {
+                    var title = $('#queryresult thead th').eq($(this).index()).text();
+                    $(this).html('<input type=text placeholder=' +title+' >');
+                  });
 
+                  // DataTable
+                  var table = $('#queryresult').DataTable();
+
+                  // Apply the search
+                  table.columns().eq(0).each(function (colIdx) {
+                    $('input', table.column(colIdx).header()).on('keyup change', function () {
+                      table
+                        .column(colIdx)
+                        .search(this.value)
+                        .draw();
+                    });
+                  });
+                });
 
               });
+
           }
         </script>
       </div>
     </div>
-    <script src="assets/vendor/jquery/jquery.min.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="node_modules/tablefilter/dist/tablefilter/tablefilter.js"></script>
-    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/venobox/venobox.min.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
+
 
     <script src="index.js"></script>
     <script>

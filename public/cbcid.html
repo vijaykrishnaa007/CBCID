@@ -466,18 +466,17 @@
 
 
               <input type="radio" id="pso_pro" name="lname" value="No" style="margin-left: 20px;">No<br><br>
-              <div id="pso" style="display: none;">
-                <label for="des">Reason:</label><br>
+              
                 <input type="text" id="pso_reason" name="lname" style="margin-left: 20px;"><br><br>
-              </div>
+             
               <script>
                 $(document).ready(function () {
                   $("input[type='radio']").change(function () {
                     if ($(this).val() == "No") {
-                      $("#pso").show();
+                      $("#pso_reason").show();
                     }
                     else {
-                      $("#pso").hide();
+                      $("#pso_reason").hide();
                     }
                   });
                 });

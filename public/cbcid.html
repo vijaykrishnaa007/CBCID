@@ -18,24 +18,24 @@
   <script src="assets/vendor/aos/aos.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css">
-  
+
   <script type="text/javascript" charset="utf8"
     src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
 
-    
-    <script type="text/javascript" charset="utf8"
+
+  <script type="text/javascript" charset="utf8"
     src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script>
 
-    
 
-    <script type="text/javascript" charset="utf8"
+
+  <script type="text/javascript" charset="utf8"
     src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.print.min.js"></script>
-    
 
-    <script type="text/javascript" charset="utf8"
+
+  <script type="text/javascript" charset="utf8"
     src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.colVis.min.js"></script>
-    
-    <script type="text/javascript" charset="utf8"
+
+  <script type="text/javascript" charset="utf8"
     src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js"></script>
   <link href="assets/img/cbcid/download__1_-removebg-preview.png" rel="icon">
   <link
@@ -150,7 +150,8 @@
           <p>CID</p>
           <div class="row">
             <div class="col-sm-6">
-              <img src="assets/img/cbcid/sureshkumar.jpg"  style="padding-bottom: 10px;"width="200px" height="200px"></br>
+              <img src="assets/img/cbcid/sureshkumar.jpg" style="padding-bottom: 10px;" width="200px"
+                height="200px"></br>
               <!--<img src="assets/img/cbcid/sureshkumar.jpg" width="100px" height="100px" alt="testimonial">-->
               <p>testimonial Appears Here!!</p>
               <h2>T.Suresh Kumar</h2>
@@ -168,7 +169,7 @@
                 This is sample scrolling text.</br>
 
               </marquee>
-              
+
             </div>
           </div>
         </div>
@@ -211,7 +212,7 @@
               </div>
             </div>
           </div>
-          <input class="btn btn-success" type="submit" value="Submit" data-toggle="modal" data-target="#myModal">
+          <input class="btn btn-success" type="submit" value="Submit" data-toggle="modal" >
         </form>
         <!-- Modal -->
         <div class="modal fade" id="myModal" role="dialog">
@@ -238,8 +239,10 @@
             let name = document.querySelector('#s_name').value.toUpperCase();
             let des = document.querySelector('#s_des').value.toUpperCase();
             let scale = document.querySelector('#s_scale').value.toUpperCase();
-            database.ref('scaleofsecurity').push({ name: name, des: des, scale: scale });
-            document.getElementById('officerform').reset();
+            database.ref('scaleofsecurity').push({ name: name, des: des, scale: scale }).then(qw => {
+                $('#exampleModal').modal('show');
+                document.getElementById('officerform').reset();
+              });
           }
         </script>
       </div>
@@ -269,7 +272,7 @@
               try {
                 var removeTab = document.getElementById('scaleresult');
                 var parentEl = removeTab.parentElement;
-                parentEl.innerHTML="";
+                parentEl.innerHTML = "";
               } catch (err) {
 
               }
@@ -327,42 +330,42 @@
                   table.style.border = "1px solid black";
                   table.appendChild(tbody);
                   $(document).ready(function () {
-                // Setup - add a text input to each footer cell
-                $('#scaleresult thead th').each(function () {
-                  var title = $('#scaleresult thead th').eq($(this).index()).text();
-                  $(this).append('<input type=text placeholder=' + title + ' >');
-                });
+                    // Setup - add a text input to each footer cell
+                    $('#scaleresult thead th').each(function () {
+                      var title = $('#scaleresult thead th').eq($(this).index()).text();
+                      $(this).append('<input type=text placeholder=' + title + ' >');
+                    });
 
-                // DataTable
-                var table = $('#scaleresult').DataTable({
-        dom: 'Bfrtip',
-        buttons: [
-            {
-                extend: 'print',
-                text: 'Print selected',
-                exportOptions: {
-                    columns: ':visible'
-                }
-            },
-            'colvis'
-        ],
-        columnDefs: [ {
-            targets: -1,
-            visible: false
-        } ],
-        select:true
-    } );
+                    // DataTable
+                    var table = $('#scaleresult').DataTable({
+                      dom: 'Bfrtip',
+                      buttons: [
+                        {
+                          extend: 'print',
+                          text: 'Print selected',
+                          exportOptions: {
+                            columns: ':visible'
+                          }
+                        },
+                        'colvis'
+                      ],
+                      columnDefs: [{
+                        targets: -1,
+                        visible: false
+                      }],
+                      select: true
+                    });
 
-                // Apply the search
-                table.columns().eq(0).each(function (colIdx) {
-                  $('input', table.column(colIdx).header()).on('keyup change', function () {
-                    table
-                      .column(colIdx)
-                      .search(this.value)
-                      .draw();
+                    // Apply the search
+                    table.columns().eq(0).each(function (colIdx) {
+                      $('input', table.column(colIdx).header()).on('keyup change', function () {
+                        table
+                          .column(colIdx)
+                          .search(this.value)
+                          .draw();
+                      });
+                    });
                   });
-                });
-              });
 
                 });
               //
@@ -371,7 +374,7 @@
               try {
                 var removeTab = document.getElementById('scaleresult');
                 var parentEl = removeTab.parentElement;
-                parentEl.innerHTML="";
+                parentEl.innerHTML = "";
               } catch (err) {
 
               }
@@ -429,42 +432,42 @@
                   table.style.border = "1px solid black";
                   table.appendChild(tbody);
                   $(document).ready(function () {
-                // Setup - add a text input to each footer cell
-                $('#scaleresult thead th').each(function () {
-                  var title = $('#scaleresult thead th').eq($(this).index()).text();
-                  $(this).append('<input type=text placeholder=' + title + ' >');
-                });
+                    // Setup - add a text input to each footer cell
+                    $('#scaleresult thead th').each(function () {
+                      var title = $('#scaleresult thead th').eq($(this).index()).text();
+                      $(this).append('<input type=text placeholder=' + title + ' >');
+                    });
 
-                // DataTable
-                var table = $('#scaleresult').DataTable({
-        dom: 'Bfrtip',
-        buttons: [
-            {
-                extend: 'print',
-                text: 'Print selected',
-                exportOptions: {
-                    columns: ':visible'
-                }
-            },
-            'colvis'
-        ],
-        columnDefs: [ {
-            targets: -1,
-            visible: false
-        } ],
-        select:true
-    } );
+                    // DataTable
+                    var table = $('#scaleresult').DataTable({
+                      dom: 'Bfrtip',
+                      buttons: [
+                        {
+                          extend: 'print',
+                          text: 'Print selected',
+                          exportOptions: {
+                            columns: ':visible'
+                          }
+                        },
+                        'colvis'
+                      ],
+                      columnDefs: [{
+                        targets: -1,
+                        visible: false
+                      }],
+                      select: true
+                    });
 
-                // Apply the search
-                table.columns().eq(0).each(function (colIdx) {
-                  $('input', table.column(colIdx).header()).on('keyup change', function () {
-                    table
-                      .column(colIdx)
-                      .search(this.value)
-                      .draw();
+                    // Apply the search
+                    table.columns().eq(0).each(function (colIdx) {
+                      $('input', table.column(colIdx).header()).on('keyup change', function () {
+                        table
+                          .column(colIdx)
+                          .search(this.value)
+                          .draw();
+                      });
+                    });
                   });
-                });
-              });
 
                 });
               //
@@ -526,12 +529,19 @@
               <script>
                 $(document).ready(function () {
                   $("input[type='radio']").change(function () {
-                    if ($(this).val() == "No") {
+                    if ($(this).attr('id') == "br_pro") {
                       $("#br_reason").show();
                     }
-                    else {
+                    else if ($(this).attr('id') == "br") {
                       $("#br_reason").hide();
                     }
+                    else if ($(this).attr('id') == "pso") {
+                      $("#pso_reason").hide();
+                    }
+                    else if ($(this).attr('id') == "pso_pro") {
+                      $("#pso_reason").show();
+                    }
+                    $(this).prop('checked', true);
                   });
                 });
               </script>
@@ -542,21 +552,10 @@
 
 
               <input type="radio" id="pso_pro" name="lname" value="no" style="margin-left: 20px;">No<br><br>
-              
-                <input type="text" id="pso_reason" name="lname" style="margin-left: 20px;display:none"><br><br>
-             
-              <script>
-                $(document).ready(function () {
-                  $("input[type='radio']").change(function () {
-                    if ($(this).val() == "no") {
-                      $("#pso_reason").show();
-                    }
-                    else {
-                      $("#pso_reason").hide();
-                    }
-                  });
-                });
-              </script>
+
+              <input type="text" id="pso_reason" name="lname" style="margin-left: 20px;display:none"><br><br>
+
+
 
               <label for="scale">NSG/CRPF/CISF:</label><br>
               <input type="text" id="typeofforce" name="lname" style="margin-left: 20px;"><br><br><br><br>
@@ -571,7 +570,7 @@
           <label for="scale">Attach DSR:</label>
           <!--<input type="text" id="dsr" name="lname"><br>-->
           <input type="file" id="fileToUpload"><br>
-          <input class="btn btn-success" type="submit" value="Submit" data-toggle="modal" data-target="#exampleModal">
+          <input class="btn btn-success" type="submit" value="Submit" data-toggle="modal">
         </form>
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -620,11 +619,9 @@
           let a_to = document.querySelector('#a_to').value.toUpperCase();
           let h_from = document.querySelector('#h_from').value.toUpperCase();
           let h_to = document.querySelector('#h_to').value.toUpperCase();
-          let br = document.querySelector('#br').value.toUpperCase();
-          let br_pro = document.querySelector('#br_pro').value.toUpperCase();
+          let br = document.querySelector('#br').checked;
           let br_reason = document.querySelector('#br_reason').value.toUpperCase();
-          let pso = document.querySelector('#pso').value.toUpperCase();
-          let pso_pro = document.querySelector('#pso_pro').value.toUpperCase();
+          let pso = document.querySelector('#pso').checked;
           let pso_reason = document.querySelector('#pso_reason').value.toUpperCase();
           let typeofforce = document.querySelector('#typeofforce').value.toUpperCase();
           let remarks = document.querySelector('#remarks').value.toUpperCase();
@@ -634,15 +631,18 @@
             snapshot.ref.getDownloadURL().then(function (url) {
               database.ref('vipmovement').push({
                 name: name, des: des, scale: scale, date: date, purpose: purpose, stay: stay, place: place, function: functio
-                , type: type, a_from: a_from, a_to: a_to, h_from: h_from, h_to: h_to, br: br, br_pro: br_pro, br_reason: br_reason, pso: pso, pso_pro: pso_pro, pso_reason: pso_reason
+                , type: type, a_from: a_from, a_to: a_to, h_from: h_from, h_to: h_to, br: br, br_reason: br_reason, pso: pso, pso_reason: pso_reason
                 , typeofforce: typeofforce, remarks: remarks, link: url
+              }).then(qw => {
+                $('#exampleModal').modal('show');
+                document.getElementById('uploadform').reset();
               });
             });
 
           });
 
           console.log(name);
-          document.getElementById('uploadform').reset();
+
         }
         function uuidv4() {
           return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
@@ -851,23 +851,23 @@
 
                 // DataTable
                 var table = $('#querynocresult').DataTable({
-        dom: 'Bfrtip',
-        buttons: [
-            {
-                extend: 'print',
-                text: 'Print selected',
-                exportOptions: {
-                    columns: ':visible'
-                }
-            },
-            'colvis'
-        ],
-        columnDefs: [ {
-            targets: -1,
-            visible: false
-        } ],
-        select:true
-    } );
+                  dom: 'Bfrtip',
+                  buttons: [
+                    {
+                      extend: 'print',
+                      text: 'Print selected',
+                      exportOptions: {
+                        columns: ':visible'
+                      }
+                    },
+                    'colvis'
+                  ],
+                  columnDefs: [{
+                    targets: -1,
+                    visible: false
+                  }],
+                  select: true
+                });
 
                 // Apply the search
                 table.columns().eq(0).each(function (colIdx) {
@@ -951,24 +951,26 @@
             </div>
 
           </div>
-          <input class="btn btn-success" type="submit" value="Submit" data-toggle="modal" data-target="#exampleModalLong">
+          <input class="btn btn-success" type="submit" value="Submit" data-toggle="modal"
+            >
         </form>
-        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+          aria-labelledby="exampleModalLongTitle" aria-hidden="true">
           <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
-              
+
               <div class="modal-body" style="color:black">
                 <p>The form has been submitted successfully</p>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                
+
               </div>
             </div>
           </div>
         </div>
       </div>
-      
+
       <script>
         document.getElementById('nocform').addEventListener('submit', formnocSubmit);
 
@@ -991,8 +993,10 @@
           database.ref('noc').push({
             refno: refno, origin: origin, name: name, des: des, country: country, purpose: purpose, days: days, passport: passport, deptaction: deptaction,
             serviceparticular: serviceparticular, date: date, approval: approval, reason: reason, frequency: frequency
-          });
-          document.getElementById('nocform').reset();
+          }).then(qw => {
+                $('#exampleModal').modal('show');
+                document.getElementById('nocform').reset();
+              });
         } 
       </script>
       <div id="queries" class="tabcontent">
@@ -1043,7 +1047,7 @@
         </form>
 
         <script>
-          
+
           document.getElementById('queryform').addEventListener('submit', formSubmit);
           function formSubmit(e) {
             try {
@@ -1206,19 +1210,19 @@
                   /*td = document.createElement("td");
                   td.style.border = "1px solid black";
                   td.textContent = value.br_pro;
-                  tr.append(td);
+                  tr.append(td);*/
                   td = document.createElement("td");
                   td.style.border = "1px solid black";
                   td.textContent = value.br_reason;
-                  tr.append(td);*/
+                  tr.append(td);
                   td = document.createElement("td");
                   td.style.border = "1px solid black";
                   td.textContent = value.pso;
                   tr.append(td);
                   td = document.createElement("td");
-                  td.style.border = "1px solid black";
+                  /*td.style.border = "1px solid black";
                   td.textContent = value.pso_pro;
-                  tr.append(td);
+                  tr.append(td);*/
                   td = document.createElement("td");
                   td.style.border = "1px solid black";
                   td.textContent = value.pso_reason;
@@ -1266,23 +1270,23 @@
 
                   // DataTable
                   var table = $('#queryresult').DataTable({
-        dom: 'Bfrtip',
-        buttons: [
-            {
-                extend: 'print',
-                text: 'Print selected',
-                exportOptions: {
-                    columns: ':visible'
-                }
-            },
-            'colvis'
-        ],
-        columnDefs: [ {
-            targets: -1,
-            visible: false
-        } ],
-        select:true
-    } );
+                    dom: 'Bfrtip',
+                    buttons: [
+                      {
+                        extend: 'print',
+                        text: 'Print selected',
+                        exportOptions: {
+                          columns: ':visible'
+                        }
+                      },
+                      'colvis'
+                    ],
+                    columnDefs: [{
+                      targets: -1,
+                      visible: false
+                    }],
+                    select: true
+                  });
 
                   // Apply the search
                   table.columns().eq(0).each(function (colIdx) {

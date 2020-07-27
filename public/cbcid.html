@@ -192,9 +192,9 @@
             <div class="col-sm-6" style="text-align: left;">
 
               <label for="name">Name of the Person:</label><br>
-              <input type="text" id="s_name" name="fname" style="margin-left: 20px;"><br><br>
+              <input type="text" id="s_name" name="fname" pattern="[A-Za-z]" style="margin-left: 20px;" required ><br><br>
               <label for="des">Designation:</label><br>
-              <input type="text" id="s_des" name="lname" style="margin-left: 20px;"><br><br>
+              <input type="text" id="s_des" name="lname" pattern="[A-Za-z]" style="margin-left: 20px;" required><br><br>
 
 
             </div>
@@ -483,23 +483,23 @@
             <div class="col-sm-6" style="text-align: left;">
 
               <label for="name">Name of the VIP :</label><br>
-              <input type="text" id="name" name="fname" style="margin-left: 20px;"><br><br>
+              <input type="text" id="name" name="fname"  pattern="[A-Za-z]"style="margin-left: 20px;" required><br><br>
               <label for="des">Designation:</label><br>
-              <input type="text" id="des" name="lname" style="margin-left: 20px;"><br><br>
+              <input type="text" id="des" name="lname" pattern="[A-Za-z]" style="margin-left: 20px;" required><br><br>
               <label for="scale">Scale of Security:</label><br>
-              <input type="text" id="scale7" name="scale" style="margin-left: 20px;"><br><br><br><br>
+              <input type="text" id="scale7" name="scale" style="margin-left: 20px;" required><br><br><br><br>
               <label for="date">Date of Visit:</label><br>
-              <input type="date" id="date" name="fname" style="margin-left: 20px;"><br><br>
+              <input type="date" id="date" name="fname" style="margin-left: 20px;" required><br><br>
               <label for="purpose">Purpose of Visit:</label><br>
-              <input type="text" id="purpose" name="lname" style="margin-left: 20px;"><br><br>
+              <input type="text" id="purpose" name="lname" pattern="[A-Za-z]" style="margin-left: 20px;" required><br><br>
               <label for="stay">Place of Stay:</label><br>
-              <input type="text" id="stay" name="fname" style="margin-left: 20px;"><br><br><br><br>
+              <input type="text" id="stay" name="fname"  pattern="[A-Za-z]" style="margin-left: 20px;" required><br><br><br><br>
               <label for="place">Place of Visit:</label><br>
-              <input type="text" id="place" name="lname" style="margin-left: 20px;"><br><br>
+              <input type="text" id="place" name="lname" pattern="[A-Za-z]" style="margin-left: 20px;" required><br><br>
               <label for="function">Function Places:</label><br>
-              <input type="text" id="function" name="lname" style="margin-left: 20px;"><br><br>
+              <input type="text" id="function" name="lname" pattern="[A-Za-z]" style="margin-left: 20px;" required><br><br>
               <label for="type">Type of Function:</label><br>
-              <input type="text" id="type" name="lname" style="margin-left: 20px;"><br><br><br><br>
+              <input type="text" id="type" name="lname" pattern="[A-Za-z]" style="margin-left: 20px;" required><br><br><br><br>
 
 
             </div>
@@ -507,23 +507,23 @@
 
               <label for="airport">Airport Details:</label><br>
               <label for="a_from">From:</label><br>
-              <input type="text" id="a_from" name="fname" style="margin-left: 20px;"><br>
+              <input type="text" id="a_from" name="fname" pattern="[A-Za-z]" style="margin-left: 20px;" required><br>
               <label for="a_to">To:</label><br>
-              <input type="text" id="a_to" name="fname" style="margin-left: 20px;"><br><br>
+              <input type="text" id="a_to" name="fname" pattern="[A-Za-z]" style="margin-left: 20px;" required><br><br>
 
               <label for="helipad">Helipad Details:</label><br>
               <label for="h_from">From:</label><br>
-              <input type="text" id="h_from" name="fname" style="margin-left: 20px;"><br>
+              <input type="text" id="h_from" name="fname" pattern="[A-Za-z]" style="margin-left: 20px;" required><br>
               <label for="h_to">To:</label><br>
-              <input type="text" id="h_to" name="fname" style="margin-left: 20px;"><br><br>
+              <input type="text" id="h_to" name="fname" pattern="[A-Za-z]" style="margin-left: 20px;" required><br><br>
 
               <label for="des">BR Car :</label><br>
-              <input type="radio" id="br" name="lname" value="Yes" style="margin-left: 20px;">Yes
+              <input type="radio" id="br" name="lname" value="Yes" style="margin-left: 20px;" >Yes
 
               <!--<label for="des">If not Provided:</label><br>-->
-              <input type="radio" id="br_pro" name="lname" value="No" style="margin-left: 20px;">No<br>
+              <input type="radio" id="br_pro" name="lname" value="No" style="margin-left: 20px;" >No<br>
 
-              <input type="text" id="br_reason" name="lname" style="margin-left: 25px;display: none;"><br><br>
+              <input type="text" id="br_reason" name="lname" style="margin-left: 25px;display: none;" ><br><br>
 
 
               <script>
@@ -548,28 +548,28 @@
 
 
               <label for="des">PSO:</label><br>
-              <input type="radio" id="pso" name="lname" value="Yes" style="margin-left: 20px;">Yes
+              <input type="radio" id="pso" name="llname" value="Yes" style="margin-left: 20px;">Yes
 
 
-              <input type="radio" id="pso_pro" name="lname" value="no" style="margin-left: 20px;">No<br><br>
+              <input type="radio" id="pso_pro" name="llname" value="no" style="margin-left: 20px;">No<br><br>
 
               <input type="text" id="pso_reason" name="lname" style="margin-left: 20px;display:none"><br><br>
 
 
 
               <label for="scale">NSG/CRPF/CISF:</label><br>
-              <input type="text" id="typeofforce" name="lname" style="margin-left: 20px;"><br><br><br><br>
+              <input type="text" id="typeofforce" name="lname" style="margin-left: 20px;" required><br><br><br><br>
 
 
             </div>
           </div>
           <label for="remark">Remarks</label>
           <textarea name="message" id="remarks" rows="8" columns="10"
-            style="margin-left: 10px;"></textarea><br><br><br><br>
+            style="margin-left: 10px;" required></textarea><br><br><br><br>
 
           <label for="scale">Attach DSR:</label>
           <!--<input type="text" id="dsr" name="lname"><br>-->
-          <input type="file" id="fileToUpload"><br>
+          <input type="file" id="fileToUpload" required><br>
           <input class="btn btn-success" type="submit" value="Submit" data-toggle="modal">
         </form>
         <!-- Modal -->
@@ -912,32 +912,32 @@
             <div class="col-sm-6" style="text-align: left;">
 
               <label for="no">NOC REFERENCE NO:</label><br>
-              <input type="text" id="nocu_refno" name="fname" style="margin-left: 20px;"><br><br>
+              <input type="text" id="nocu_refno" name="fname" style="margin-left: 20px;" required><br><br>
               <label for="origin">NOC ORIGIN DEPT :</label><br>
-              <input type="text" id="nocu_origin" name="lname" style="margin-left: 20px;"><br><br>
+              <input type="text" id="nocu_origin" name="lname" pattern="[A-Za-z]" style="margin-left: 20px;" required><br><br>
               <label for="name">APPLICANT NAME:</label><br>
-              <input type="text" id="nocu_name" name="lname" style="margin-left: 20px;"><br><br>
+              <input type="text" id="nocu_name" name="lname" pattern="[A-Za-z]" style="margin-left: 20px;" required><br><br>
               <label for="des">DESIGNATION:</label><br>
-              <input type="text" id="nocu_des" name="fname" style="margin-left: 20px;"><br><br><br><br>
+              <input type="text" id="nocu_des" name="fname" pattern="[A-Za-z]" style="margin-left: 20px;" required><br><br><br><br>
               <label for="country">PROPOSED COUNTRY:</label><br>
-              <input type="text" id="nocu_country" name="lname" style="margin-left: 20px;"><br><br>
+              <input type="text" id="nocu_country" name="lname" pattern="[A-Za-z]" style="margin-left: 20px;" required><br><br>
               <label for="purpose">PURPOSE:</label><br>
-              <input type="text" id="nocu_purpose" name="fname" style="margin-left: 20px;"><br><br>
+              <input type="text" id="nocu_purpose" name="fname" pattern="[A-Za-z]" style="margin-left: 20px;" required><br><br>
               <label for="days">Duration:</label><br>
-              <input type="text" id="nocu_days" name="lname" style="margin-left: 20px;"><br><br>
+              <input type="text" id="nocu_days" name="lname" style="margin-left: 20px;" required><br><br>
             </div>
             <div class="col-sm-6" style="text-align: left;padding-left: 150px;">
 
               <label for="pass_no">PASSPORT NO:</label><br>
-              <input type="text" id="nocu_passno" name="fname" style="margin-left: 20px;"><br><br>
+              <input type="text" id="nocu_passno" name="fname" style="margin-left: 20px;" required><br><br>
               <label for="action">DEPT ACTION IF ANY :</label><br>
-              <input type="text" id="nocu_action" name="lname" style="margin-left: 20px;"><br><br>
+              <input type="text" id="nocu_action" name="lname" pattern="[A-Za-z]" style="margin-left: 20px;" required><br><br>
               <label for="service">SERVICE PARTICULARS:</label><br>
-              <input type="text" id="nocu_service" name="lname" style="margin-left: 20px;"><br><br>
+              <input type="text" id="nocu_service" name="lname" pattern="[A-Za-z]" style="margin-left: 20px;" required><br><br>
               <label for="date">DATE OF NOC:</label><br>
-              <input type="date" id="nocu_date" name="fname" style="margin-left: 20px;"><br><br><br><br>
+              <input type="date" id="nocu_date" name="fname" style="margin-left: 20px;" required><br><br><br><br>
               <label for="purpose">NOC ISSUED/RETURNED:</label><br>
-              <select name="con" id="nocu_approved" style="margin-left: 20px;">
+              <select name="con" id="nocu_approved" style="margin-left: 20px;" required>
                 <option value="issue">ISSUED:</option>
                 <option value="return">RETURNED:</option>
 
@@ -945,14 +945,13 @@
               <label for="reason">If Returned Reason:</label>
               <input type="text" id="nocu_reason" name="fname" style="margin-left: 20px;"><br><br>
               <label for="fre">FREQUENCY OF NOC:</label>
-              <input type="text" id="nocu_fre" name="lname" style="margin-left: 20px;"><br><br>
+              <input type="text" id="nocu_fre" name="lname" style="margin-left: 20px;" required><br><br>
 
 
             </div>
 
           </div>
-          <input class="btn btn-success" type="submit" value="Submit" data-toggle="modal"
-            >
+          <input class="btn btn-success" type="submit" value="Submit" data-toggle="modal">
         </form>
         <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
           aria-labelledby="exampleModalLongTitle" aria-hidden="true">

@@ -952,24 +952,24 @@
             </div>
 
           </div>
-          <input class="btn btn-success" type="submit" value="Submit" data-toggle="modal" data-target="#exampleModal">
+          <input class="btn btn-success" type="submit" value="Submit" data-toggle="modal" data-target="#exampleModalLong">
         </form>
-      </div>
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-sm" role="document" style="color:black">
-          <div class="modal-content">
-
-            <div class="modal-body">
-              The form has been submitted Successfully!!!
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+              
+              <div class="modal-body" style="color:black">
+                <p>The form has been submitted successfully</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                
+              </div>
             </div>
           </div>
         </div>
       </div>
+      
       <script>
         document.getElementById('nocform').addEventListener('submit', formnocSubmit);
 
